@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Under Development</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Arial", sans-serif;
+      background: #1a1a1a;
+      /* Darker black-gray background */
+      color: #fff;
+      /* White text for contrast */
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      opacity: 0.9;
+      /* Slightly dimmed text */
+    }
+
+    .gear {
+      display: inline-block;
+      margin: 20px;
+      font-size: 4em;
+      /* Large gear size */
+      color: #fff;
+      /* White gear */
+      animation: rotate 4s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="gear">⚙️</div>
+    <h1>We're Under Development</h1>
+    <p>Something amazing is on the way! Stay tuned.</p>
+  </div>
+</body>
+
+</html>
