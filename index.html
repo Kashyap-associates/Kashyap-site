@@ -1,81 +1,81 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Under Development</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: "Arial", sans-serif;
-      background: #1a1a1a;
-      /* Darker black-gray background */
-      color: #fff;
-      /* White text for contrast */
-      overflow: hidden;
-    }
-
-    .container {
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3em;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      opacity: 0.9;
-      /* Slightly dimmed text */
-    }
-
-    .gear {
-      display: inline-block;
-      margin: 20px;
-      font-size: 4em;
-      /* Large gear size */
-      color: #fff;
-      /* White gear */
-      animation: rotate 4s linear infinite;
-    }
-
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <div class="gear">⚙️</div>
-    <h1>We're Under Development</h1>
-    <p>Something amazing is on the way! Stay tuned.</p>
-  </div>
-</body>
-
+  <body>
+    <nav>
+      <a href="/">
+        <img src="" alt="Logo" />
+        <span id="title"></span>
+      </a>
+      <a href="/#home">Home</a>
+      <a href="/#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact us</a>
+    </nav>
+    <main>
+      <section id="home">
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
+          repudiandae nemo libero dolorum, earum vitae, error perspiciatis
+          doloremque blanditiis nobis minus reiciendis quaerat sint cumque
+          nesciunt tempore veniam aliquam architecto!
+        </div>
+      </section>
+      <section id="about">
+        <div>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+          voluptas mollitia, temporibus dolorem, quam optio voluptate ex sint
+          fugit pariatur omnis aliquam illo a doloribus enim. Laboriosam, quos
+          aspernatur. Mollitia.
+        </div>
+      </section>
+      <section id="services">
+        <div>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, ullam
+          eum deleniti labore vero voluptatum aspernatur molestiae corrupti
+          deserunt delectus voluptatem ea alias laborum quam veritatis
+          consectetur aperiam doloribus dolor?
+        </div>
+      </section>
+      <section id="contact">
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eaque
+          dolore officia, consequatur ipsam debitis, explicabo dolorem odit amet
+          animi, esse consectetur veritatis. Ipsam reprehenderit laborum
+          delectus nobis, adipisci ipsum?
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <a href="" id="instagram"><img src="" alt="instagram" /></a>
+        <a href="" id="linkedin"><img src="" alt="linkedin" /></a>
+        <a href="" id="whatsapp"><img src="" alt="whatsapp" /></a>
+        <a href="" id="gmail"><img src="" alt="gmail" /></a>
+      </div>
+      <div>
+        <a href="/#home">Home</a> | <a href="/#about">About</a> |
+        <a href="/#services">Services</a>
+      </div>
+      <div>&copy; All rights are reserved for this website!</div>
+    </footer>
+  </body>
+  <script>
+    fetch("config.json")
+      .then((res) => res.json())
+      .then((data) => {
+        document.title = data.title;
+        document.querySelector("span#title").textContent = data.title;
+        document.querySelector("a#instagram").href = data.social_media.instagram;
+        document.querySelector("a#linkedin").href = data.social_media.linkedin;
+        document.querySelector("a#whatsapp").href = data.social_media.whatsapp;
+        document.querySelector("a#gmail").href = data.social_media.gmail;
+      })
+      .catch((err) => console.error("Error loading content :", err));
+  </script>
 </html>
