@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
   </head>
 
   <body>
     <nav>
       <a href="/">
-        <img src="" alt="Logo" />
+        <img src="/assets/images/favicon.png" alt="Logo" />
         <span id="title"></span>
       </a>
       <a href="/#home">Home</a>
@@ -18,38 +19,10 @@
       <a href="/#contact">Contact us</a>
     </nav>
     <main>
-      <section id="home">
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-          repudiandae nemo libero dolorum, earum vitae, error perspiciatis
-          doloremque blanditiis nobis minus reiciendis quaerat sint cumque
-          nesciunt tempore veniam aliquam architecto!
-        </div>
-      </section>
-      <section id="about">
-        <div>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
-          voluptas mollitia, temporibus dolorem, quam optio voluptate ex sint
-          fugit pariatur omnis aliquam illo a doloribus enim. Laboriosam, quos
-          aspernatur. Mollitia.
-        </div>
-      </section>
-      <section id="services">
-        <div>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, ullam
-          eum deleniti labore vero voluptatum aspernatur molestiae corrupti
-          deserunt delectus voluptatem ea alias laborum quam veritatis
-          consectetur aperiam doloribus dolor?
-        </div>
-      </section>
-      <section id="contact">
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eaque
-          dolore officia, consequatur ipsam debitis, explicabo dolorem odit amet
-          animi, esse consectetur veritatis. Ipsam reprehenderit laborum
-          delectus nobis, adipisci ipsum?
-        </div>
-      </section>
+      <section id="home"></section>
+      <section id="about"></section>
+      <section id="services"></section>
+      <section id="contact"></section>
     </main>
     <footer>
       <div>
@@ -65,17 +38,5 @@
       <div>&copy; All rights are reserved for this website!</div>
     </footer>
   </body>
-  <script>
-    fetch("config.json")
-      .then((res) => res.json())
-      .then((data) => {
-        document.title = data.title;
-        document.querySelector("span#title").textContent = data.title;
-        document.querySelector("a#instagram").href = data.social_media.instagram;
-        document.querySelector("a#linkedin").href = data.social_media.linkedin;
-        document.querySelector("a#whatsapp").href = data.social_media.whatsapp;
-        document.querySelector("a#gmail").href = data.social_media.gmail;
-      })
-      .catch((err) => console.error("Error loading content :", err));
-  </script>
+  <script src="/assets/js/config.js"></script>
 </html>
