@@ -1,25 +1,27 @@
 {
-  "about_content": "",
-  "about_icon": "",
+  "about_content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "about_icon": "https://cdn-icons-png.flaticon.com/512/5709/5709755.png",
   "partner": [
     {
-      "name": "",
-      "sample_description": "",
-      "full_description": "",
+      "name": "Lorem Ipsum",
+      "icon": "",
+      "sample_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fermentum ex sed lacinia semper. Phasellus ex odio, luctus ut pellentesque sed, semper id neque. Nullam laoreet, neque sed viverra consectetur, dui quam accumsan orci, sed elementum augue purus id ante. Nullam commodo sem lacus, placerat bibendum dolor maximus at. Donec sit amet aliquam urna. Suspendisse scelerisque arcu id nisi ullamcorper imperdiet. Ut ac leo a diam consectetur accumsan. Cras varius purus sit amet sapien pretium, sed aliquam erat eleifend. Sed vel tortor non lorem maximus sagittis. Morbi commodo tempor ante at vehicula. Donec aliquet mi at lectus elementum, id lacinia magna eleifend. Aliquam ut imperdiet lectus. Sed ac enim sit amet velit laoreet sodales.",
+      "full_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vestibulum in lorem vel volutpat. Praesent convallis, nibh id fringilla ultricies, diam felis tincidunt sapien, et dignissim tortor purus vel urna. Donec ultrices sagittis dapibus. Maecenas risus arcu, imperdiet vitae dui eget, vehicula consectetur mauris. Donec vitae pellentesque ante, vitae congue diam. Cras dignissim nisi nec volutpat cursus. Donec varius luctus erat eget vestibulum. Nunc id dictum tortor.\nDonec vel convallis ligula. Maecenas sed mauris et ante pretium porttitor. Donec non elementum ipsum. Integer tristique nibh est, efficitur convallis leo ultrices sit amet. Praesent consequat faucibus dapibus. Nunc sapien enim, faucibus eget lobortis sollicitudin, sollicitudin vitae lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed bibendum mattis nisl, vitae consectetur nisi sodales eget. Sed dui nisi, ullamcorper at semper a, dictum et velit. Sed sagittis risus ut consequat vulputate. Etiam auctor maximus lacinia.\nNullam id dignissim eros. Vestibulum a felis et massa sodales mattis at ut metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer nisl nunc, egestas eu interdum ac, commodo vulputate lectus. Nulla pretium velit nec dapibus dignissim. Mauris eget turpis id massa malesuada eleifend. Quisque quis commodo sem, a aliquet eros. Fusce volutpat laoreet sem eu aliquet. Maecenas vel lectus lectus. Nunc risus libero, maximus quis dui eu, vestibulum euismod lorem. Proin luctus dui eget eleifend vestibulum. Donec egestas, risus a pretium dapibus, mauris elit pellentesque neque, ut pellentesque tellus urna mollis lacus. Quisque quis sapien nec lacus maximus vehicula id nec felis. Aliquam dictum blandit diam quis pulvinar. Nunc pharetra ac turpis sed pellentesque. Etiam eu aliquet mauris, nec cursus diam.",
       "social_media_links": {
-        "linkedin": "",
-        "whatsapp": "",
-        "email": ""
+        "linkedin": "example.com",
+        "whatsapp": "example.com",
+        "email": "example.com"
       }
     },
     {
-      "name": "",
-      "sample_description": "",
-      "full_description": "",
+      "name": "Lorem Ipsum",
+      "icon":"",
+      "sample_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fermentum ex sed lacinia semper. Phasellus ex odio, luctus ut pellentesque sed, semper id neque. Nullam laoreet, neque sed viverra consectetur, dui quam accumsan orci, sed elementum augue purus id ante. Nullam commodo sem lacus, placerat bibendum dolor maximus at. Donec sit amet aliquam urna. Suspendisse scelerisque arcu id nisi ullamcorper imperdiet. Ut ac leo a diam consectetur accumsan. Cras varius purus sit amet sapien pretium, sed aliquam erat eleifend. Sed vel tortor non lorem maximus sagittis. Morbi commodo tempor ante at vehicula. Donec aliquet mi at lectus elementum, id lacinia magna eleifend. Aliquam ut imperdiet lectus. Sed ac enim sit amet velit laoreet sodales.",
+      "full_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vestibulum in lorem vel volutpat. Praesent convallis, nibh id fringilla ultricies, diam felis tincidunt sapien, et dignissim tortor purus vel urna. Donec ultrices sagittis dapibus. Maecenas risus arcu, imperdiet vitae dui eget, vehicula consectetur mauris. Donec vitae pellentesque ante, vitae congue diam. Cras dignissim nisi nec volutpat cursus. Donec varius luctus erat eget vestibulum. Nunc id dictum tortor.\nDonec vel convallis ligula. Maecenas sed mauris et ante pretium porttitor. Donec non elementum ipsum. Integer tristique nibh est, efficitur convallis leo ultrices sit amet. Praesent consequat faucibus dapibus. Nunc sapien enim, faucibus eget lobortis sollicitudin, sollicitudin vitae lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed bibendum mattis nisl, vitae consectetur nisi sodales eget. Sed dui nisi, ullamcorper at semper a, dictum et velit. Sed sagittis risus ut consequat vulputate. Etiam auctor maximus lacinia.\nNullam id dignissim eros. Vestibulum a felis et massa sodales mattis at ut metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer nisl nunc, egestas eu interdum ac, commodo vulputate lectus. Nulla pretium velit nec dapibus dignissim. Mauris eget turpis id massa malesuada eleifend. Quisque quis commodo sem, a aliquet eros. Fusce volutpat laoreet sem eu aliquet. Maecenas vel lectus lectus. Nunc risus libero, maximus quis dui eu, vestibulum euismod lorem. Proin luctus dui eget eleifend vestibulum. Donec egestas, risus a pretium dapibus, mauris elit pellentesque neque, ut pellentesque tellus urna mollis lacus. Quisque quis sapien nec lacus maximus vehicula id nec felis. Aliquam dictum blandit diam quis pulvinar. Nunc pharetra ac turpis sed pellentesque. Etiam eu aliquet mauris, nec cursus diam.",
       "social_media_links": {
-        "linkedin": "",
-        "whatsapp": "",
-        "email": ""
+        "linkedin": "example.com",
+        "whatsapp": "example.com",
+        "email": "example.com"
       }
     }
   ]

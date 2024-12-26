@@ -1,15 +1,15 @@
 {
-  "title": "name",
+  "title": "Lorem Ipsum",
   "icon": "https://cdn-icons-png.flaticon.com/512/5709/5709755.png",
   "social_media_links": {
-    "instagram": "",
-    "linkedin": "",
-    "whatsapp": "",
-    "email": ""
+    "instagram": "example.com",
+    "linkedin": "example.com",
+    "whatsapp": "example.com",
+    "email": "example.com"
   },
   "contact": {
-    "location": "",
-    "phone_no": 0,
-    "email": ""
+    "location": "...",
+    "phone_no": 1234567890,
+    "email": "contact@example.com"
   }
 }
