@@ -9,30 +9,38 @@ import (
 //go:embed pages/*
 var pages embed.FS
 
-const path = "pages/"
+const (
+	path     = "pages/"
+	mainPath = "main/"
+	layout   = "layout.html"
+)
 
 func Index(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/" {
+		http.Redirect(w, r, "/404", http.StatusSeeOther)
+		return
+	}
 	var files []string
 	for _, i := range []string{
-		"layout.html",
-		"index.html",
-		"home.html",
-		"about.html",
-		"services.html",
-		"contact.html",
-		"other.html",
-	}{
+		layout,
+		mainPath + "index.html",
+		mainPath + "home.html",
+		mainPath + "about.html",
+		mainPath + "services.html",
+		mainPath + "contact.html",
+		mainPath + "other.html",
+	} {
 		files = append(files, path+i)
 	}
 	temp, err := template.ParseFS(
 		pages, files...,
 	)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Redirect(w, r, "/error", http.StatusSeeOther)
 		return
 	}
 	if err := temp.Execute(w, nil); err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Redirect(w, r, "/error", http.StatusSeeOther)
 		return
 	}
 }
