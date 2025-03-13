@@ -11,9 +11,9 @@ import (
 var routes = map[string]http.HandlerFunc{
 	"/":       functions.Index,
 	"/admin":  functions.Admin,
-	"/thanks": functions.Thanks,
-	"/404":    functions.NotFound,
-	"/error":  functions.Error,
+	// "/thanks": functions.Thanks,
+	// "/404":    functions.NotFound,
+	// "/error":  functions.Error,
 }
 
 func New(port string) {
