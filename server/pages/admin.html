@@ -3,146 +3,842 @@
 
 <!-- Main Section -->
 <main>
+  <style>
+    :root {
+      --pico-font-size: 100%;
+    }
+  </style>
   <script nonce="xyz">
-    const admin_data = JSON.parse("{{ .Data }}");
-    console.log(admin_data);
+    const admin = {
+      admin_data: JSON.parse("{{ .Data }}"),
+      async send_data() {
+        await fetch("/update", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.admin_data.Main),
+        })
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error("Status not ok!");
+            } else {
+              alert("Success!");
+            }
+          })
+          .catch((err) => {
+            alert("Error occured!");
+            console.error("Error", err);
+          });
+      },
+      async log_out() {
+        await fetch("/logout", {
+          method: "POST",
+        })
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error("Status not ok!");
+            } else {
+              window.location.href = "/";
+            }
+          })
+          .catch((err) => {
+            alert("Error occured!");
+            console.error("Error", err);
+          });
+      },
+    };
   </script>
-  <!--  Login Page -->
-  <template x-if="admin_data.Login" x-cloak>
-    <section class="container">
-      <style>
-        section {
-          margin-top: 5rem;
+  <div x-data="admin">
+    <!--  Login Page -->
+    <template x-if="admin_data.Login" x-cloak>
+      <section class="container">
+        <style>
+          section {
+            margin-top: 5rem;
 
-          & div {
-            margin-top: 1.2rem;
+            & div {
+              margin-top: 1.2rem;
+            }
           }
-        }
-      </style>
-      <h1>Login</h1>
-      <div>
-        <form action="/login" method="post">
-          <label>
-            <span>Username</span>
-            <input type="text" name="username" placeholder="Enter Username" required />
-            <span>Password</span>
-            <input type="password" name="password" placeholder="Enter Password" required />
-            <button type="submit">Login</button>
-          </label>
-        </form>
-      </div>
-    </section>
-  </template>
-
-  <!-- Dashboard Page -->
-  <template x-if="!admin_data.Login" x-cloak>
-    <section class="container">
-      <style>
-        section {
-          margin-top: 5rem;
-
-          & div {
-            margin-top: 1.2rem;
-          }
-        }
-      </style>
-      <hgroup>
-        <h1>Admin Panel</h1>
-        <p>Welcome to the admin panel dashboard!</p>
-      </hgroup>
-      <form x-data="dashboard_data">
+        </style>
+        <h1>Login</h1>
         <div>
-          <!-- Common section -->
-          <article>
-            <h2>Common Section</h2>
+          <form action="/login" method="post">
             <label>
-              <span>Email</span>
-              <input type="email" name="common-email" id="common-email" placeholder="Enter your original email" />
+              <span>Username</span>
+              <input
+                type="text"
+                name="username"
+                placeholder="Enter Username"
+                autocomplete="username"
+                required
+              />
+              <span>Password</span>
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+                autocomplete="current-password"
+                required
+              />
+              <button type="submit">Login</button>
             </label>
-            <label>
-              <span>Email - Password</span>
-              <input type="password" name="common-email-password" id="common-email-password"
-                placeholder="Enter your original email's password" />
-            </label>
-            <label>
-              <span>Calculator</span>
-              <input type="url" name="common-calculator" id="common-calculator"
-                placeholder="Enter a url for the calculator" />
-            </label>
-            <article>
-              <h3>Links</h3>
-              <label>
-                <span>Linkedin</span>
-                <input type="url" name="common-linkedin" id="common-linkedin"
-                  placeholder="Enter linkedin url for your website" />
-              </label>
-              <label>
-                <span>Telegram</span>
-                <input type="url" name="common-telegram" id="common-telegram"
-                  placeholder="Enter telegram url for your website" />
-              </label>
-              <label>
-                <span>Email</span>
-                <input type="url" name="common-link-email" id="common-link-email"
-                  placeholder="Enter your contact email" />
-              </label>
-            </article>
-          </article>
-
-          <!-- Hero section -->
-          <article>
-            <h2>Hero Section</h2>
-            <label>
-              <span>Title</span>
-              <input type="text" name="hero-title" id="hero-title" placeholder="Enter title for hero section" />
-            </label>
-            <label>
-              <span>Sub - Title</span>
-              <input type="text" name="hero-sub-title" id="hero-sub-title"
-                placeholder="Enter sub title for hero section" />
-            </label>
-          </article>
-
-          <!-- About  section -->
-          <article>
-            <h2>About Section</h2>
-            <label>
-              <span>Intro</span>
-              <textarea name="about-intro" id="about-intro" placeholder="Enter about page intro"></textarea>
-            </label>
-            <label>
-              <span>Intro</span>
-              <textarea name="about-story" id="about-story" placeholder="Enter about page story"></textarea>
-            </label>
-            <label>
-              <span>Image</span>
-              <input type="url" name="about-image" id="about-image" placeholder="Enter a url for the about image" />
-            </label>
-            <article>
-              <h3>Patners</h3>
-              <template x-for="i in [1, 2, 3]">
-                <footer>
-                  <span x-text="i"></span>
-                  <article>
-                    <span x-text="i"></span>
-                  </article>
-                </footer>
-              </template>
-            </article>
-            <article>
-              <h3>Team</h3>
-              <template x-for="i in [1, 2, 3]">
-                <footer>
-                  <span x-text="i"></span>
-                </footer>
-              </template>
-            </article>
-          </article>
+          </form>
         </div>
-        <button type="submit">Save</button>
-      </form>
-    </section>
-  </template>
+      </section>
+    </template>
+
+    <!-- Dashboard Page -->
+    <template x-if="!admin_data.Login" x-cloak>
+      <section class="container">
+        <style>
+          section {
+            margin-top: 5rem;
+
+            & div {
+              margin-top: 1.2rem;
+            }
+          }
+        </style>
+        <hgroup>
+          <h1>Admin Panel</h1>
+          <p>Welcome to the admin panel dashboard!</p>
+          <hgroup style="display: flex; justify-content: flex-end">
+            <button @click="log_out()">Log out</button>
+          </hgroup>
+        </hgroup>
+        <form @submit.prevent="send_data()">
+          <div>
+            <!-- Common section -->
+            <article>
+              <h2>Common Section</h2>
+              <label>
+                <span>Calculator</span>
+                <input
+                  type="url"
+                  name="common-calculator"
+                  id="common-calculator"
+                  x-model="admin_data.Main.calculator"
+                  placeholder="Enter a url for the calculator"
+                  required
+                />
+              </label>
+              <article>
+                <h3>Links</h3>
+                <div class="grid">
+                  <label>
+                    <span>Linkedin</span>
+                    <input
+                      type="url"
+                      name="common-linkedin"
+                      id="common-linkedin"
+                      x-model="admin_data.Main.links.linkedin"
+                      placeholder="Enter linkedin url for your website"
+                      required
+                    />
+                  </label>
+                  <label>
+                    <span>Telegram</span>
+                    <input
+                      type="url"
+                      name="common-telegram"
+                      id="common-telegram"
+                      x-model="admin_data.Main.links.telegram"
+                      placeholder="Enter telegram url for your website"
+                      required
+                    />
+                  </label>
+                  <label>
+                    <span>Email</span>
+                    <input
+                      type="url"
+                      name="common-link-email"
+                      id="common-link-email"
+                      x-model="admin_data.Main.links.email"
+                      placeholder="Enter your contact email"
+                      required
+                    />
+                  </label>
+                </div>
+              </article>
+            </article>
+
+            <!-- Hero section -->
+            <article>
+              <h2>Hero Section</h2>
+              <label>
+                <span>Title</span>
+                <input
+                  type="text"
+                  name="hero-title"
+                  id="hero-title"
+                  x-model="admin_data.Main.hero.title"
+                  placeholder="Enter title for hero section"
+                  required
+                />
+              </label>
+              <label>
+                <span>Sub - Title</span>
+                <input
+                  type="text"
+                  name="hero-sub-title"
+                  id="hero-sub-title"
+                  x-model="admin_data.Main.hero.sub_title"
+                  placeholder="Enter sub title for hero section"
+                  required
+                />
+              </label>
+            </article>
+
+            <!-- About  section -->
+            <article>
+              <h2>About Section</h2>
+              <label>
+                <span>Intro</span>
+                <textarea
+                  name="about-intro"
+                  id="about-intro"
+                  x-model="admin_data.Main.about.intro"
+                  placeholder="Enter about page intro section"
+                  required
+                ></textarea>
+              </label>
+              <label>
+                <span>Story</span>
+                <textarea
+                  name="about-story"
+                  id="about-story"
+                  x-model="admin_data.Main.about.story"
+                  placeholder="Enter about page story section"
+                  required
+                ></textarea>
+              </label>
+              <label>
+                <span>Choose us</span>
+                <textarea
+                  name="about-choose-us"
+                  id="about-choose-us"
+                  x-model="admin_data.Main.about.choose_us"
+                  placeholder="Enter about page choose us section"
+                  required
+                ></textarea>
+              </label>
+              <label>
+                <span>Image</span>
+                <input
+                  type="url"
+                  name="about-image"
+                  id="about-image"
+                  x-model="admin_data.Main.about.image"
+                  placeholder="Enter a url for the about image"
+                />
+              </label>
+
+              <!-- about - patners section -->
+              <article>
+                <h3>Patners</h3>
+                <label>
+                  <span>Intro</span>
+                  <textarea
+                    name="about-patners-intro"
+                    id="about-patners-intro"
+                    x-model="admin_data.Main.about.patners.intro"
+                    placeholder="Enter about page patners intro"
+                    required
+                  ></textarea>
+                </label>
+                <template
+                  x-for="(person, i) in admin_data.Main.about.patners.members"
+                  :key="i"
+                >
+                  <footer>
+                    <label>
+                      <span>Name</span>
+                      <input
+                        type="text"
+                        name="about-patners-name"
+                        :id="'about-patners-name-' + i"
+                        x-model="person.name"
+                        placeholder="Enter your name"
+                        required
+                      />
+                    </label>
+                    <label>
+                      <span>Image</span>
+                      <input
+                        type="url"
+                        name="about-patners-image"
+                        :id="'about-patners-image-' + i"
+                        x-model="person.image"
+                        placeholder="Enter a url for the about image"
+                      />
+                    </label>
+                    <label>
+                      <span>Details</span>
+                      <textarea
+                        name="about-patners-details"
+                        :id="'about-patners-details-' + i"
+                        x-model="person.details"
+                        placeholder="Enter details section"
+                        required
+                      ></textarea>
+                    </label>
+                    <label>
+                      <span>Background</span>
+                      <textarea
+                        name="about-patners-background"
+                        :id="'about-patners-background-' + i"
+                        x-model="person.background"
+                        placeholder="Enter about page choose us section"
+                        required
+                      ></textarea>
+                    </label>
+                    <label>
+                      <span>Details</span>
+                      <textarea
+                        name="about-patners-startup"
+                        :id="'about-patners-startup-' + i"
+                        x-model="person.startup_story"
+                        placeholder="Enter about page choose us section"
+                        required
+                      ></textarea>
+                    </label>
+                    <article>
+                      <h4>Links</h4>
+                      <div class="grid">
+                        <label>
+                          <span>Linkedin</span>
+                          <input
+                            type="url"
+                            name="about-person-link-linkedin"
+                            :id="'about-person-link-linkedin-' + i"
+                            x-model="person.links.linkedin"
+                            placeholder="Enter linkedin url for your website"
+                            required
+                          />
+                        </label>
+                        <label>
+                          <span>Whatsapp</span>
+                          <input
+                            type="url"
+                            name="about-person-link-whatsapp"
+                            :id="'about-person-link-whatsapp-' + i"
+                            x-model="person.links.whatsapp"
+                            placeholder="Enter whatsapp url for your website"
+                            required
+                          />
+                        </label>
+                        <label>
+                          <span>Email</span>
+                          <input
+                            type="url"
+                            name="about-person-link-email"
+                            :id="'about-person-link-email-' + i"
+                            x-model="person.links.email"
+                            placeholder="Enter your contact email"
+                            required
+                          />
+                        </label>
+                      </div>
+                    </article>
+                    <article>
+                      <h4>Feedback</h4>
+                      <label>
+                        <span>Intro</span>
+                        <textarea
+                          name="about-person-feedback-intro"
+                          :id="'about-person-feedback-intro-' + i"
+                          x-model="person.feedback.intro"
+                          placeholder="Enter about page intro"
+                          required
+                        ></textarea>
+                      </label>
+                      <footer>
+                        <label>
+                          <span>Name</span>
+                          <input
+                            type="text"
+                            name="about-person-feedback-quote-name"
+                            :id="'about-person-feedback-quote-name-' + i"
+                            x-model="person.feedback.quote.name"
+                            placeholder="Enter feedback person name"
+                            required
+                          />
+                        </label>
+                        <label>
+                          <span>Said</span>
+                          <textarea
+                            name="about-person-feedback-quote-said"
+                            :id="'about-person-feedback-quote-said-' + i"
+                            x-model="person.feedback.quote.said"
+                            placeholder="Enter feedback quote"
+                            required
+                          ></textarea>
+                        </label>
+                      </footer>
+                    </article>
+                    <hgroup>
+                      <a
+                        @click="admin_data.Main.about.patners.members.splice(i, 1)"
+                        >Remove patner</a
+                      >
+                    </hgroup>
+                  </footer>
+                </template>
+                <div style="display: flex; justify-content: flex-end">
+                  <a
+                    @click="admin_data.Main.about.patners.members.push({...admin_data.Main.about.patners.members[0]})"
+                    >Add patner</a
+                  >
+                </div>
+              </article>
+
+              <!-- about - team section -->
+              <article>
+                <h3>Team</h3>
+                <label>
+                  <span>Intro</span>
+                  <textarea
+                    name="about-team-intro"
+                    id="about-team-intro"
+                    x-model="admin_data.Main.about.team.intro"
+                    placeholder="Enter about page team intro"
+                    required
+                  ></textarea>
+                </label>
+                <template
+                  x-for="(member, i) in admin_data.Main.about.team.members"
+                  :key="i"
+                >
+                  <footer>
+                    <div class="grid">
+                      <label>
+                        <span>Image</span>
+                        <input
+                          type="url"
+                          name="about-team-image"
+                          :id="'about-team-image-' + i"
+                          x-model="member.image"
+                          placeholder="Enter a url for the team member's image"
+                        />
+                      </label>
+                      <label>
+                        <span>Name</span>
+                        <input
+                          type="text"
+                          name="about-team-name"
+                          :id="'about-team-name-' + i"
+                          x-model="member.name"
+                          placeholder="Enter your name"
+                          required
+                        />
+                      </label>
+                      <label>
+                        <span>Position</span>
+                        <input
+                          type="text"
+                          name="about-team-position"
+                          :id="'about-team-position-' + i"
+                          x-model="member.position"
+                          placeholder="Enter your position"
+                          required
+                        />
+                      </label>
+                      <label>
+                        <span>Link</span>
+                        <input
+                          type="url"
+                          name="about-team-email"
+                          :id="'about-team-email-' + i"
+                          x-model="member.link"
+                          placeholder="Enter a url for the email"
+                          required
+                        />
+                      </label>
+                    </div>
+                    <hgroup>
+                      <a
+                        @click="admin_data.Main.about.team.members.splice(i, 1)"
+                        >Remove team member</a
+                      >
+                    </hgroup>
+                  </footer>
+                </template>
+                <div style="display: flex; justify-content: flex-end">
+                  <a
+                    @click="admin_data.Main.about.team.members.push({...admin_data.Main.about.team.members[0]})"
+                    >Add team member</a
+                  >
+                </div>
+              </article>
+            </article>
+
+            <!-- Services section -->
+            <article>
+              <h3>Services section</h3>
+              <label>
+                <span>Short Intro</span>
+                <textarea
+                  name="services-short-intro"
+                  id="services-short-intro"
+                  x-model="admin_data.Main.services.short_intro"
+                  placeholder="Enter services page short intro"
+                  required
+                ></textarea>
+              </label>
+              <label>
+                <span>Intro</span>
+                <textarea
+                  name="services-intro"
+                  id="services-intro"
+                  x-model="admin_data.Main.services.intro"
+                  placeholder="Enter services page intro"
+                  required
+                ></textarea>
+              </label>
+
+              <article class="grid">
+                <template
+                  x-for="(option, i) in admin_data.Main.services.options"
+                  :key="i"
+                >
+                  <footer>
+                    <label>
+                      <span x-text="'Option - ' + i"></span>
+                      <input
+                        type="text"
+                        name="services-options"
+                        :id="'services-options-' + i"
+                        x-model="option"
+                        placeholder="Enter services options"
+                        required
+                      />
+                    </label>
+                    <hgroup>
+                      <a @click="admin_data.Main.services.options.splice(i, 1)"
+                        >Remove option</a
+                      >
+                    </hgroup>
+                  </footer>
+                </template>
+              </article>
+              <hgroup>
+                <div style="display: flex; justify-content: flex-end">
+                  <a
+                    @click="admin_data.Main.services.options.push({...admin_data.Main.services.options[0]})"
+                    >Add option</a
+                  >
+                </div>
+              </hgroup>
+
+              <template
+                x-for="(service, i) in admin_data.Main.services.data"
+                :key="i"
+              >
+                <article>
+                  <h4 x-text="service.name"></h4>
+
+                  <div class="grid">
+                    <label>
+                      <span>Image</span>
+                      <input
+                        type="url"
+                        name="services-data-image"
+                        :id="'services-data-image-' + i"
+                        x-model="service.image"
+                        placeholder="Enter a url for the service image"
+                      />
+                    </label>
+                    <label>
+                      <span>Name</span>
+                      <input
+                        type="text"
+                        name="services-data-name"
+                        :id="'services-data-name-' + i"
+                        x-model="service.name"
+                        placeholder="Enter name"
+                        required
+                      />
+                    </label>
+                    <label>
+                      <span>Time</span>
+                      <input
+                        type="number"
+                        name="services-data-name"
+                        :id="'services-data-name-' + i"
+                        x-model="service.time"
+                        placeholder="Enter time"
+                        required
+                      />
+                    </label>
+                  </div>
+
+                  <h4>Delivery</h4>
+                  <div class="grid">
+                    <template x-for="delivery in service.deliverable">
+                      <article>
+                        <input
+                          type="text"
+                          name="services-data-delivery"
+                          :id="'services-data-delivery-' + i"
+                          x-model="delivery"
+                          placeholder="Enter delivery"
+                          required
+                        />
+                        <hgroup>
+                          <a @click="service.deliverable.splice(i,1)"
+                            >Remove delivery</a
+                          >
+                        </hgroup>
+                      </article>
+                    </template>
+                  </div>
+                  <hgroup>
+                    <div style="display: flex; justify-content: flex-end">
+                      <a
+                        @click="service.deliverable.push({...service.deliverable[0]})"
+                        >Add delivery</a
+                      >
+                    </div>
+                  </hgroup>
+
+                  <div class="grid">
+                    <label>
+                      <span>Regulation</span>
+                      <input
+                        type="text"
+                        name="services-data-regulation"
+                        :id="'services-data-regulation-' + i"
+                        x-model="service.regulation"
+                        placeholder="Enter regulation"
+                        required
+                      />
+                    </label>
+                    <label>
+                      <span>Catagory</span>
+                      <input
+                        type="text"
+                        name="services-data-catagory"
+                        :id="'services-data-catagory-' + i"
+                        x-model="service.catagory"
+                        placeholder="Enter catagory"
+                        required
+                      />
+                    </label>
+                    <label>
+                      <span>Availability</span>
+                      <input
+                        type="text"
+                        name="services-data-availability"
+                        :id="'services-data-availability-' + i"
+                        x-model="service.availability"
+                        placeholder="Enter availability"
+                        required
+                      />
+                    </label>
+                    <label>
+                      <span>Audience</span>
+                      <input
+                        type="text"
+                        name="services-data-audience"
+                        :id="'services-data-audience-' + i"
+                        x-model="service.audience"
+                        placeholder="Enter audience"
+                        required
+                      />
+                    </label>
+                  </div>
+
+                  <label>
+                    <span>Details</span>
+                    <textarea
+                      name="services-data-details"
+                      :id="'services-data-details-' + i"
+                      x-model="service.details"
+                      placeholder="Enter details"
+                      required
+                    ></textarea>
+                  </label>
+                  <label>
+                    <span>Scope</span>
+                    <textarea
+                      name="services-data-scope"
+                      :id="'services-data-scope-' + i"
+                      x-model="service.scope"
+                      placeholder="Enter scope"
+                      required
+                    ></textarea>
+                  </label>
+
+                  <hgroup>
+                    <a @click="admin_data.Main.services.data.splice(i, 1)"
+                      >Remove service</a
+                    >
+                  </hgroup>
+                </article>
+              </template>
+              <div style="display: flex; justify-content: flex-end">
+                <a
+                  @click="admin_data.Main.services.data.push({...admin_data.Main.services.data[0]})"
+                  >Add Services</a
+                >
+              </div>
+            </article>
+
+            <!-- others section -->
+            <article>
+              <h3>Others section</h3>
+              <label>
+                <span>Details</span>
+                <textarea
+                  name="others-details"
+                  id="others-details"
+                  x-model="admin_data.Main.others.details"
+                  placeholder="Enter others details"
+                  required
+                ></textarea>
+              </label>
+              <template
+                x-for="(task, i) in admin_data.Main.others.tasks"
+                :key="i"
+              >
+                <article>
+                  <label>
+                    <span>Title</span>
+                    <input
+                      type="text"
+                      name="task-title"
+                      :id="'task-title-' + i"
+                      x-model="task.title"
+                      placeholder="Enter task title"
+                      required
+                    />
+                  </label>
+                  <label>
+                    <span>Details</span>
+                    <textarea
+                      name="task-details"
+                      :id="'task-details-' + i"
+                      x-model="task.details"
+                      placeholder="Enter task details"
+                      required
+                    ></textarea>
+                  </label>
+                </article>
+              </template>
+            </article>
+
+            <!-- cantact section -->
+            <article>
+              <h3>Contact section</h3>
+              <label>
+                <span>Intro</span>
+                <textarea
+                  type="text"
+                  name="contact-intro"
+                  id="contact-intro"
+                  x-model="admin_data.Main.contacts.intro"
+                  placeholder="Enter contact intro"
+                  required
+                ></textarea>
+              </label>
+              <div class="grid">
+                <label>
+                  <span>Address</span>
+                  <input
+                    type="text"
+                    name="contact-addr"
+                    id="contact-addr"
+                    x-model="admin_data.Main.contacts.addr"
+                    placeholder="Enter address"
+                    required
+                  />
+                </label>
+                <label>
+                  <span>Phone</span>
+                  <input
+                    type="text"
+                    name="contact-phone"
+                    id="contact-phone"
+                    x-model="admin_data.Main.contacts.phone"
+                    placeholder="Enter phone no"
+                    required
+                  />
+                </label>
+                <label>
+                  <span>Email</span>
+                  <input
+                    type="text"
+                    name="contact-email"
+                    id="contact-email"
+                    x-model="admin_data.Main.contacts.email"
+                    placeholder="Enter email"
+                    required
+                  />
+                </label>
+              </div>
+              <label>
+                <span>Response</span>
+                <textarea
+                  name="contact-details"
+                  id="contact-details"
+                  x-model="admin_data.Main.contacts.responce"
+                  placeholder="Enter response for thank you email"
+                  required
+                ></textarea>
+              </label>
+            </article>
+
+            <!-- Annotations section -->
+            <article>
+              <h3>Annotations section</h3>
+              <template
+                x-for="(annotation, i) in admin_data.Main.annotations"
+                :key="i"
+              >
+                <article>
+                  <label>
+                    <span>Short</span>
+                    <input
+                      type="text"
+                      name="annotation-short"
+                      id="'annotation-short' + i"
+                      x-model="annotation.short"
+                      placeholder="Enter short annotation"
+                      required
+                    />
+                  </label>
+                  <label>
+                    <span>Long</span>
+                    <textarea
+                      name="annotation-long"
+                      id="'annotation-long-' + i"
+                      x-model="annotation.long"
+                      placeholder="Enter long annotation"
+                      required
+                    ></textarea>
+                  </label>
+                  <hgroup>
+                    <a @click="admin_data.Main.annotations.splice(i, 1)"
+                      >Remove annotation</a
+                    >
+                  </hgroup>
+                </article>
+              </template>
+              <div style="display: flex; justify-content: flex-end">
+                <a
+                  @click="admin_data.Main.annotations.push({...admin_data.Main.annotations[0]})"
+                  >Add annotation</a
+                >
+              </div>
+            </article>
+          </div>
+          <button type="submit">Save</button>
+        </form>
+      </section>
+    </template>
+  </div>
 </main>
 
 <!-- End of admin -->

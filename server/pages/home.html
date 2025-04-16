@@ -4,6 +4,7 @@
 {{template "navbar" .}}
 <script nonce="xyz">
   const home_page = JSON.parse("{{ .Data }}");
+  console.log(home_page)
 </script>
 
 <main x-data="home_page">
@@ -22,7 +23,7 @@
     <div class="container">
       <div class="grid">
         <div class="container">
-          <img :src="About.Image" alt="about logo" height="500" width="500" />
+          <img :src="About.Image || '/assets/images/about.svg'" alt="about logo" height="500" width="500" />
         </div>
         <div class="container top-text">
           <p class="secondary" x-text="About.Details"></p>
@@ -102,7 +103,7 @@
               <p x-text="task.Details || 'no details'"></p>
             </div>
             <footer>
-              <a :href="'/' + (task.name || '404')">View here</a>
+              <a :href="'/' + (task.Name || '404')" x-text="'View ' + task.Name"></a>
             </footer>
           </article>
         </template>

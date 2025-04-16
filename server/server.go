@@ -153,8 +153,10 @@ type servicesType struct {
 
 // admin server type
 type adminType struct {
-	Login bool
-	Main interface{}
+	Login    bool
+	Email    string
+	Password string
+	Main     interface{}
 }
 
 var (
@@ -226,28 +228,30 @@ func (routes _server) serve() http.Handler {
 // main server
 func New() http.Handler {
 	return _server{
-		"/":           home,
-		"/thanks":     thanks,
-		"/about/":     about,
-		"/services":   services,
-		"/annotation": annotation,
-		"/calculator": calculator,
-		"/about/{id}": about_with_id,
-		"/404":        page_not_found,
-		"/error":      error_page,
-		"POST /chat":  chat,
-		"POST /email": email,
+		"/":            home,
+		"/thanks":      thanks,
+		"/about/":      about,
+		"/services":    services,
+		"/annotations": annotation,
+		"/calculator":  calculator,
+		"/about/{id}":  about_with_id,
+		"/404":         page_not_found,
+		"/error":       error_page,
+		"POST /chat":   chat,
+		"POST /email":  email,
 	}.serve()
 }
 
 // admin server
 func NewAdmin() http.Handler {
 	return _server{
-		"/":           admin_login,
-		"/dashboard":  admin,
-		"/404":        page_not_found,
-		"/error":      error_page,
-		"/denied":     access_denied,
-		"POST /login": auth_login,
+		"/":            admin_login,
+		"/dashboard":   admin,
+		"/404":         page_not_found,
+		"/error":       error_page,
+		"/denied":      access_denied,
+		"POST /login":  auth_login,
+		"POST /update": update_data,
+		"POST /logout": auth_logout,
 	}.serve()
 }

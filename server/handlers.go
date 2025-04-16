@@ -6,9 +6,12 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
+	"io"
 	"log/slog"
 	"net/http"
+	"os"
 	"strings"
+	"time"
 )
 
 var (
@@ -457,8 +460,19 @@ func annotation(w http.ResponseWriter, r *http.Request) {
 func thanks(w http.ResponseWriter, r *http.Request) {
 	config.Headers(w)
 	common.Top = updateAnnotation()
-	if err := otherTmpl.Execute(w, otherType{
+	var err error
+	var thanksData, commonData []byte
+	if thanksData, err = json.Marshal(otherType{
 		Thanks: true,
+	}); err != nil {
+		slog.Error(err.Error())
+	}
+	if commonData, err = json.Marshal(common); err != nil {
+		slog.Error(err.Error())
+	}
+	if err := otherTmpl.Execute(w, sendType{
+		Data:   string(thanksData),
+		Common: string(commonData),
 	}); err != nil {
 		handleError(w, r, err, false)
 	}
@@ -491,11 +505,11 @@ func admin(w http.ResponseWriter, r *http.Request) {
 
 // [admin] / (login)
 func admin_login(w http.ResponseWriter, r *http.Request) {
+	var err error
 	if r.URL.Path != "/" {
 		http.Redirect(w, r, "/404", http.StatusFound)
 	}
 	config.Headers(w)
-	var err error
 	var adminData, commonData []byte
 	if adminData, err = json.Marshal(adminType{
 		Login: true,
@@ -517,25 +531,49 @@ func admin_login(w http.ResponseWriter, r *http.Request) {
 func auth_login(w http.ResponseWriter, r *http.Request) {
 	username := r.FormValue("username")
 	password := r.FormValue("password")
-	var err error
-	var data string
-	if data, err = config.Get(config.Login_key); err != nil {
-		slog.Error(err.Error())
-	}
-	login_data := strings.Split(data, "--")
-	if (username != login_data[0]) || (password != login_data[1]) {
+	if (username != os.Getenv("ADMIN_USERNAME")) || (password != os.Getenv("ADMIN_PASSWORD")) {
 		http.Redirect(w, r, "/denied", http.StatusFound)
 	} else {
 		http.SetCookie(w, &http.Cookie{
 			Name:     "auth_token",
 			Value:    createToken(),
 			Path:     "/",
+			Expires:  time.Now().Add(1 * time.Hour),
+			MaxAge:   3600,
 			HttpOnly: true,
 			Secure:   true,
 			SameSite: http.SameSiteLaxMode,
 		})
 		http.Redirect(w, r, "/dashboard", http.StatusFound)
 	}
+}
+
+// [admin] POST /update
+func update_data(w http.ResponseWriter, r *http.Request) {
+	var err error
+	if _, err = r.Cookie("auth_token"); err != nil {
+		http.Redirect(w, r, "/denied", http.StatusFound)
+	}
+	var bodyByte []byte
+	if bodyByte, err = io.ReadAll(r.Body); err != nil {
+		slog.Error(err.Error())
+		return
+	}
+	config.Set(string(bodyByte))
+}
+
+// [admin] POST /login
+func auth_logout(w http.ResponseWriter, r *http.Request) {
+	var err error
+	var cookie *http.Cookie
+	if cookie, err = r.Cookie("auth_token"); err != nil {
+		slog.Error(err.Error())
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	cookie.Expires = time.Unix(0, 0)
+	cookie.MaxAge = -1
+	http.SetCookie(w, cookie)
 }
 
 // [admin] /denied

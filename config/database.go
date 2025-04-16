@@ -5,9 +5,7 @@ import (
 	_ "embed"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"log/slog"
-	"os"
 	"sync"
 	"time"
 
@@ -22,10 +20,10 @@ type DataType struct {
 
 	About struct {
 		Image   string `json:"image"`
-		Intro   string `json:"details"`
+		Intro   string `json:"intro"`
 		Story   string `json:"story"`
 		Patners struct {
-			Intro   string
+			Intro   string `json:"intro"`
 			Members []struct {
 				Image         string `json:"image"`
 				Name          string `json:"name"`
@@ -116,26 +114,14 @@ var (
 	config_json string
 	config_data DataType
 	mu          sync.RWMutex
-	s_key       = "admin-data"
-	Login_key   = "admin-login"
+	Key         = "admin-data"
 )
 
 func init() {
 	defer update()
-	if _, err := Get(s_key); err != nil {
+	if _, err := Get(Key); err != nil {
 		if errors.Is(err, redis.Nil) {
-			Set(config_json, s_key)
-			return
-		}
-		slog.Error(err.Error())
-		return
-	}
-	if _, err := Get(Login_key); err != nil {
-		if errors.Is(err, redis.Nil) {
-			Set(fmt.Sprint(
-				os.Getenv("ADMIN_USERNAME"),
-				"--", os.Getenv("ADMIN_PASSWORD"),
-			), Login_key)
+			Set(config_json)
 			return
 		}
 		slog.Error(err.Error())
@@ -170,7 +156,7 @@ func Get(key string) (string, error) {
 
 func update() {
 	var err error
-	data, err := Get(s_key)
+	data, err := Get(Key)
 	if err != nil {
 		if errors.Is(err, redis.Nil) {
 			slog.Warn("No admin data found in Redis.")
@@ -186,14 +172,21 @@ func update() {
 			slog.Error(err.Error())
 			return
 		}
+		if config_data.Hero.Title == "" {
+			slog.Error("Resetting to default values!")
+			if err := json.Unmarshal([]byte(config_json), &config_data); err != nil {
+				slog.Error(err.Error())
+				return
+			}
+		}
 	}
 }
 
-func Set(data, key string) {
+func Set(data string) {
 	db := connect()
 	defer db.Close()
 	defer update()
-	if err := db.Set(context.Background(), key, data, time.Hour*99999).Err(); err != nil {
+	if err := db.Set(context.Background(), Key, data, time.Hour*99999).Err(); err != nil {
 		slog.Error(err.Error())
 	}
 }

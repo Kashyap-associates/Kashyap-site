@@ -1,217 +1,219 @@
 {
   "calculator": "https://incometaxindia.gov.in/pages/tools/tax-calculator.aspx",
   "links": {
-    "linkedin": "",
-    "telegram": "",
-    "email": ""
+    "linkedin": "https://ca-gk.org",
+    "telegram": "http://t.me/gopi_kashyap_ca_bot",
+    "email": "mailto:support@ca-gk.org"
   },
   "hero": {
-    "title": "",
-    "sub_title": ""
+    "title": "This is Hero Section",
+    "sub_title": "Lorem ipsum dolor sit"
   },
   "about": {
     "image": "",
-    "intro": "",
-    "story": "",
-    "choose_us": "",
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+    "story": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+    "choose_us": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
     "patners": {
-      "intro": "",
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
       "members": [
         {
           "image": "",
           "name": "Kashyap",
-          "details": "",
-          "background": "",
-          "startup_story": "",
+          "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+          "background": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+          "startup_story": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
           "links": {
-            "email": "",
-            "linkedin": "",
-            "whatsapp": ""
+            "email": "mailto:support@ca-gk.org",
+            "linkedin": "https://ca-gk.org",
+            "whatsapp": "https://ca-gk.org"
           },
           "feedback": {
-            "intro": "",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
             "quote": {
-              "name": "",
-              "said": ""
+              "name": "dolor",
+              "said": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
             }
           }
         },
         {
           "image": "",
           "name": "Gopi",
-          "details": "",
-          "background": "",
-          "startup_story": "",
+          "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+          "background": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+          "startup_story": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
           "links": {
-            "email": "",
-            "linkedin": "",
-            "whatsapp": ""
+            "email": "mailto:support@ca-gk.org",
+            "linkedin": "https://ca-gk.org",
+            "whatsapp": "https://ca-gk.org"
           },
           "feedback": {
-            "intro": "",
+            "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
             "quote": {
-              "name": "",
-              "said": ""
+              "name": "dolor",
+              "said": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
             }
           }
         }
       ]
     },
     "team": {
-      "intro": "",
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
       "members": [
         {
           "image": "",
-          "name": "",
-          "position": "",
-          "link": ""
+          "name": "rando",
+          "position": "employee",
+          "link": "mailto:support@ca-gk.org"
         },
         {
           "image": "",
-          "name": "",
-          "position": "",
-          "link": ""
+          "name": "mike",
+          "position": "employee",
+          "link": "mailto:support@ca-gk.org"
         }
       ]
     }
   },
   "services": {
-    "intro": "",
-    "short_intro": "",
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+    "short_intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus.",
     "options": [
-      ""
+      "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+      "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+      "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
     ],
     "data": [
       {
         "image": "",
-        "name": "",
-        "time": "",
+        "name": "service - 1",
+        "time": "7:00",
         "deliverable": [
-          ""
+          "online"
         ],
-        "regulation": "",
-        "catagory": "",
-        "availability": "",
-        "audience": "",
-        "details": "",
-        "scope": ""
+        "regulation": "ca",
+        "catagory": "tax",
+        "availability": "24/7",
+        "audience": "any",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+        "scope": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
       },
       {
         "image": "",
-        "name": "",
-        "time": "",
+        "name": "service - 2",
+        "time": "7:00",
         "deliverable": [
-          ""
+          "online", "in-person"
         ],
-        "regulation": "",
-        "catagory": "",
-        "availability": "",
-        "audience": "",
-        "details": "",
-        "scope": ""
+        "regulation": "ca",
+        "catagory": "tax",
+        "availability": "24/7",
+        "audience": "any",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+        "scope": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
       },
       {
         "image": "",
-        "name": "",
-        "time": "",
+        "name": "service - 3",
+        "time": "7:00",
         "deliverable": [
-          ""
+          "online"
         ],
-        "regulation": "",
-        "catagory": "",
-        "availability": "",
-        "audience": "",
-        "details": "",
-        "scope": ""
+        "regulation": "ca",
+        "catagory": "tax",
+        "availability": "24/7",
+        "audience": "any",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+        "scope": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
       },
       {
         "image": "",
-        "name": "",
-        "time": "",
+        "name": "service - 4",
+        "time": "7:00",
         "deliverable": [
-          ""
+          "online"
         ],
-        "regulation": "",
-        "catagory": "",
-        "availability": "",
-        "audience": "",
-        "details": "",
-        "scope": ""
+        "regulation": "ca",
+        "catagory": "tax",
+        "availability": "24/7",
+        "audience": "any",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+        "scope": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
       },
       {
         "image": "",
-        "name": "",
-        "time": "",
+        "name": "service - 5",
+        "time": "7:00",
         "deliverable": [
-          ""
+          "online"
         ],
-        "regulation": "",
-        "catagory": "",
-        "availability": "",
-        "audience": "",
-        "details": "",
-        "scope": ""
+        "regulation": "ca",
+        "catagory": "tax",
+        "availability": "24/7",
+        "audience": "any",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+        "scope": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
       },
       {
         "image": "",
-        "name": "",
-        "time": "",
+        "name": "service - 6",
+        "time": "7:00",
         "deliverable": [
-          ""
+          "online"
         ],
-        "regulation": "",
-        "catagory": "",
-        "availability": "",
-        "audience": "",
-        "details": "",
-        "scope": ""
+        "regulation": "ca",
+        "catagory": "tax",
+        "availability": "24/7",
+        "audience": "any",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+        "scope": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
       },
       {
         "image": "",
-        "name": "",
-        "time": "",
+        "name": "service - 7",
+        "time": "7:00",
         "deliverable": [
-          ""
+          "online"
         ],
-        "regulation": "",
-        "catagory": "",
-        "availability": "",
-        "audience": "",
-        "details": "",
-        "scope": ""
+        "regulation": "ca",
+        "catagory": "tax",
+        "availability": "24/7",
+        "audience": "any",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+        "scope": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
       }
     ]
   },
   "others": {
-    "details": "",
+    "details": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
     "tasks": [
       {
-        "name": "",
-        "title": "",
-        "details": ""
+        "name": "calculator",
+        "title": "Calculator",
+        "details": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
       },
       {
-        "name": "",
-        "title": "",
-        "details": ""
+        "name": "annotations",
+        "title": "Annotations",
+        "details": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
       }
     ]
   },
   "contacts": {
-    "intro": "",
-    "addr": "",
-    "phone": "",
-    "email": "",
-    "responce": ""
+    "intro": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+    "addr": "Hyderabad, Telangana",
+    "phone": "+91 1234567890",
+    "email": "support@ca-gk.org",
+    "responce": "Thank you for your response, we will get back to you shortly"
   },
   "annotations": [
     {
-      "short": "",
-      "long": ""
+      "short": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+      "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
     },
     {
-      "short": "",
-      "long": ""
+      "short": "Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis.",
+      "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper arcu eros, non mollis neque ornare a. In neque urna, ultricies vel convallis ut, consectetur id risus. Aliquam et quam eleifend, vehicula risus nec, ornare metus. Nam convallis tristique odio, et tincidunt mauris lobortis id. Nullam porttitor ligula non cursus vulputate. Morbi hendrerit elementum mi eget facilisis. Nulla interdum ipsum consectetur, congue leo sit amet, ultrices felis."
     }
   ]
 }

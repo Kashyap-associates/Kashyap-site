@@ -8,6 +8,7 @@ import (
 	"log/slog"
 	"net/http"
 	"net/smtp"
+	"os"
 )
 
 func (prompt Prompt) TalkToAI() string {
@@ -102,13 +103,13 @@ func (email Email) render(to bool) string {
 // sends a response to the specified user's email
 func (email Email) send(to bool) {
 	// requirements
-	auth_email := "yasasvigumma@gmail.com"
-	password := "xxsz dcec vojc gzod"
+	auth_email := os.Getenv("ADMIN_EMAIL_ID")
+	password := os.Getenv("ADMIN_EMAIL_PASSWORD")
 	smtpHost := "smtp.gmail.com"
 	smtpPort := "587"
 
 	// default user values
-	to_email := []string{auth_email}
+	to_email := []string{"support@ca-gk.org"}
 	message := []byte(fmt.Sprint("Subject: ", "New email from ", email.Name, "\n\n", email.render(false), "\n"))
 
 	// option to change the values
