@@ -1,0 +1,149 @@
+<!-- admin page -->
+{{define "content"}}
+
+<!-- Main Section -->
+<main>
+  <script nonce="xyz">
+    const admin_data = JSON.parse("{{ .Data }}");
+    console.log(admin_data);
+  </script>
+  <!--  Login Page -->
+  <template x-if="admin_data.Login" x-cloak>
+    <section class="container">
+      <style>
+        section {
+          margin-top: 5rem;
+
+          & div {
+            margin-top: 1.2rem;
+          }
+        }
+      </style>
+      <h1>Login</h1>
+      <div>
+        <form action="/login" method="post">
+          <label>
+            <span>Username</span>
+            <input type="text" name="username" placeholder="Enter Username" required />
+            <span>Password</span>
+            <input type="password" name="password" placeholder="Enter Password" required />
+            <button type="submit">Login</button>
+          </label>
+        </form>
+      </div>
+    </section>
+  </template>
+
+  <!-- Dashboard Page -->
+  <template x-if="!admin_data.Login" x-cloak>
+    <section class="container">
+      <style>
+        section {
+          margin-top: 5rem;
+
+          & div {
+            margin-top: 1.2rem;
+          }
+        }
+      </style>
+      <hgroup>
+        <h1>Admin Panel</h1>
+        <p>Welcome to the admin panel dashboard!</p>
+      </hgroup>
+      <form x-data="dashboard_data">
+        <div>
+          <!-- Common section -->
+          <article>
+            <h2>Common Section</h2>
+            <label>
+              <span>Email</span>
+              <input type="email" name="common-email" id="common-email" placeholder="Enter your original email" />
+            </label>
+            <label>
+              <span>Email - Password</span>
+              <input type="password" name="common-email-password" id="common-email-password"
+                placeholder="Enter your original email's password" />
+            </label>
+            <label>
+              <span>Calculator</span>
+              <input type="url" name="common-calculator" id="common-calculator"
+                placeholder="Enter a url for the calculator" />
+            </label>
+            <article>
+              <h3>Links</h3>
+              <label>
+                <span>Linkedin</span>
+                <input type="url" name="common-linkedin" id="common-linkedin"
+                  placeholder="Enter linkedin url for your website" />
+              </label>
+              <label>
+                <span>Telegram</span>
+                <input type="url" name="common-telegram" id="common-telegram"
+                  placeholder="Enter telegram url for your website" />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="url" name="common-link-email" id="common-link-email"
+                  placeholder="Enter your contact email" />
+              </label>
+            </article>
+          </article>
+
+          <!-- Hero section -->
+          <article>
+            <h2>Hero Section</h2>
+            <label>
+              <span>Title</span>
+              <input type="text" name="hero-title" id="hero-title" placeholder="Enter title for hero section" />
+            </label>
+            <label>
+              <span>Sub - Title</span>
+              <input type="text" name="hero-sub-title" id="hero-sub-title"
+                placeholder="Enter sub title for hero section" />
+            </label>
+          </article>
+
+          <!-- About  section -->
+          <article>
+            <h2>About Section</h2>
+            <label>
+              <span>Intro</span>
+              <textarea name="about-intro" id="about-intro" placeholder="Enter about page intro"></textarea>
+            </label>
+            <label>
+              <span>Intro</span>
+              <textarea name="about-story" id="about-story" placeholder="Enter about page story"></textarea>
+            </label>
+            <label>
+              <span>Image</span>
+              <input type="url" name="about-image" id="about-image" placeholder="Enter a url for the about image" />
+            </label>
+            <article>
+              <h3>Patners</h3>
+              <template x-for="i in [1, 2, 3]">
+                <footer>
+                  <span x-text="i"></span>
+                  <article>
+                    <span x-text="i"></span>
+                  </article>
+                </footer>
+              </template>
+            </article>
+            <article>
+              <h3>Team</h3>
+              <template x-for="i in [1, 2, 3]">
+                <footer>
+                  <span x-text="i"></span>
+                </footer>
+              </template>
+            </article>
+          </article>
+        </div>
+        <button type="submit">Save</button>
+      </form>
+    </section>
+  </template>
+</main>
+
+<!-- End of admin -->
+{{end}}

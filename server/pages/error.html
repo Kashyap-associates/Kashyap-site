@@ -1,0 +1,64 @@
+{{define "content"}}
+<!-- Error Page -->
+<style>
+  div.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 30%;
+    left: 10%;
+    transform: scale(1.5);
+
+    h1 {
+      font-size: 7vh;
+      color: #0058fb;
+    }
+
+    p {
+      font-size: 3vh;
+      color: black;
+    }
+
+    a {
+      font-size: 0.8rem;
+      text-decoration: none;
+      text-align: center;
+      color: #0058fb;
+      transition: ease-in-out 300ms;
+
+      & span {
+        text-decoration: underline;
+      }
+
+      &:hover {
+        padding: 1px 0.5rem;
+        color: white;
+        border-radius: 5px;
+        background-color: #0058fb;
+
+        & span {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    div {
+      transform: scale(1.2);
+      left: 0;
+    }
+  }
+</style>
+<script nonce="xyz">
+  const err_data = JSON.parse("{{ .Data }}");
+</script>
+<div class="container" x-data="err_data">
+  <h1 x-text="err_data.ErrorTitle"></h1>
+  <p x-text="err_data.ErrorMsg"></p>
+  <a href="/"><span>Go Back to home</span> &#8594;</a>
+</div>
+{{end}}

@@ -1,0 +1,52 @@
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: config/Dockerfile
+    container_name: site-app
+    working_dir: /app
+    ports:
+      - "11000:11000"
+      - "8080:8080"
+    env_file:
+      - ../app.env
+    networks:
+      - deploy_net
+    develop:
+      watch:
+        - path: ../
+          action: rebuild
+          ignore:
+            - ".git"
+            - "*.log"
+            - "*.env"
+            - "data"
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama-ai
+    expose:
+      - "11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - deploy_net
+    command: "serve"
+
+  redis:
+    image: redis:alpine
+    container_name: db-redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks: 
+      - deploy_net
+
+networks:
+  deploy_net:
+    driver: bridge
+
+volumes:
+  ollama_data:

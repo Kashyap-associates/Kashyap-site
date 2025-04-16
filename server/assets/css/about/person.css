@@ -1,0 +1,72 @@
+h1 {
+  font-size: 3rem;
+}
+
+section {
+  transition: ease-in-out 300ms;
+}
+
+section div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+
+  & div.container {
+    padding: 1.7rem;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & div.grid {
+    width: 100%;
+    padding: 1.7rem;
+    font-size: 1rem;
+    text-align: center;
+    padding-bottom: 5px;
+    justify-content: space-between;
+
+    & a {
+      position: relative;
+      top: 0;
+      text-decoration: none;
+      text-align: center;
+      color: #0058fb;
+      transition: ease-in-out 300ms;
+
+      & span {
+        text-decoration: underline;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          padding: 10px 1rem;
+          color: white;
+          border-radius: 5px;
+          background-color: #0058fb;
+
+          & span {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  & hgroup {
+    padding: 2rem;
+
+    & h2 {
+      padding-bottom: 1.7rem;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  section div {
+    padding: 0.7rem;
+  }
+}

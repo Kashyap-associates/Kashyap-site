@@ -1,0 +1,217 @@
+{
+  "calculator": "https://incometaxindia.gov.in/pages/tools/tax-calculator.aspx",
+  "links": {
+    "linkedin": "",
+    "telegram": "",
+    "email": ""
+  },
+  "hero": {
+    "title": "",
+    "sub_title": ""
+  },
+  "about": {
+    "image": "",
+    "intro": "",
+    "story": "",
+    "choose_us": "",
+    "patners": {
+      "intro": "",
+      "members": [
+        {
+          "image": "",
+          "name": "Kashyap",
+          "details": "",
+          "background": "",
+          "startup_story": "",
+          "links": {
+            "email": "",
+            "linkedin": "",
+            "whatsapp": ""
+          },
+          "feedback": {
+            "intro": "",
+            "quote": {
+              "name": "",
+              "said": ""
+            }
+          }
+        },
+        {
+          "image": "",
+          "name": "Gopi",
+          "details": "",
+          "background": "",
+          "startup_story": "",
+          "links": {
+            "email": "",
+            "linkedin": "",
+            "whatsapp": ""
+          },
+          "feedback": {
+            "intro": "",
+            "quote": {
+              "name": "",
+              "said": ""
+            }
+          }
+        }
+      ]
+    },
+    "team": {
+      "intro": "",
+      "members": [
+        {
+          "image": "",
+          "name": "",
+          "position": "",
+          "link": ""
+        },
+        {
+          "image": "",
+          "name": "",
+          "position": "",
+          "link": ""
+        }
+      ]
+    }
+  },
+  "services": {
+    "intro": "",
+    "short_intro": "",
+    "options": [
+      ""
+    ],
+    "data": [
+      {
+        "image": "",
+        "name": "",
+        "time": "",
+        "deliverable": [
+          ""
+        ],
+        "regulation": "",
+        "catagory": "",
+        "availability": "",
+        "audience": "",
+        "details": "",
+        "scope": ""
+      },
+      {
+        "image": "",
+        "name": "",
+        "time": "",
+        "deliverable": [
+          ""
+        ],
+        "regulation": "",
+        "catagory": "",
+        "availability": "",
+        "audience": "",
+        "details": "",
+        "scope": ""
+      },
+      {
+        "image": "",
+        "name": "",
+        "time": "",
+        "deliverable": [
+          ""
+        ],
+        "regulation": "",
+        "catagory": "",
+        "availability": "",
+        "audience": "",
+        "details": "",
+        "scope": ""
+      },
+      {
+        "image": "",
+        "name": "",
+        "time": "",
+        "deliverable": [
+          ""
+        ],
+        "regulation": "",
+        "catagory": "",
+        "availability": "",
+        "audience": "",
+        "details": "",
+        "scope": ""
+      },
+      {
+        "image": "",
+        "name": "",
+        "time": "",
+        "deliverable": [
+          ""
+        ],
+        "regulation": "",
+        "catagory": "",
+        "availability": "",
+        "audience": "",
+        "details": "",
+        "scope": ""
+      },
+      {
+        "image": "",
+        "name": "",
+        "time": "",
+        "deliverable": [
+          ""
+        ],
+        "regulation": "",
+        "catagory": "",
+        "availability": "",
+        "audience": "",
+        "details": "",
+        "scope": ""
+      },
+      {
+        "image": "",
+        "name": "",
+        "time": "",
+        "deliverable": [
+          ""
+        ],
+        "regulation": "",
+        "catagory": "",
+        "availability": "",
+        "audience": "",
+        "details": "",
+        "scope": ""
+      }
+    ]
+  },
+  "others": {
+    "details": "",
+    "tasks": [
+      {
+        "name": "",
+        "title": "",
+        "details": ""
+      },
+      {
+        "name": "",
+        "title": "",
+        "details": ""
+      }
+    ]
+  },
+  "contacts": {
+    "intro": "",
+    "addr": "",
+    "phone": "",
+    "email": "",
+    "responce": ""
+  },
+  "annotations": [
+    {
+      "short": "",
+      "long": ""
+    },
+    {
+      "short": "",
+      "long": ""
+    }
+  ]
+}
