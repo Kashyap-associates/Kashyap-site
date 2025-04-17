@@ -35,7 +35,6 @@ type commonType struct {
 
 // other page type
 type otherType struct {
-	Thanks bool
 	Msg    []struct {
 		Short string
 		Long  string

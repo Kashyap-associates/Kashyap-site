@@ -4,7 +4,6 @@
 {{template "navbar" .}}
 <script nonce="xyz">
   const home_page = JSON.parse("{{ .Data }}");
-  console.log(home_page)
 </script>
 
 <main x-data="home_page">

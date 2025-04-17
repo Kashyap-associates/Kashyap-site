@@ -2,17 +2,19 @@ h1 {
   padding-top: 1rem;
 }
 
-table {
+article {
   margin-top: 4rem;
   transition: ease-in-out 300ms;
 
-  & th {
+  & span {
     font-weight: bold;
     font-size: 1.5rem;
   }
 
-  & td,
-  th {
+  & artical.shadow,
+  span,
+  summary {
+    margin-top: 2rem;
     text-align: center;
     transition: ease-in-out 300ms;
 
@@ -33,7 +35,7 @@ table {
 }
 
 @media screen and (max-width: 700px) {
-  table {
+  article {
     margin-top: 2.5rem;
   }
 }

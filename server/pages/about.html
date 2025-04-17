@@ -28,9 +28,21 @@
           <h3>Founding Partners</h3>
           <p x-text="partners.intro"></p>
           <div class="grid patners">
-            <template x-for="(person, i) in partners.members" :key="person.Name || i" x-cloak>
-              <article @click="link_to('/about/' + person.Name.toLowerCase())" class="shadow">
-                <img :src="person.Img || '/assets/images/about.svg'" :alt="person.Name" width="350" height="350" />
+            <template
+              x-for="(person, i) in partners.members"
+              :key="person.Name || i"
+              x-cloak
+            >
+              <article
+                @click="link_to('/about/' + person.Name.toLowerCase())"
+                class="shadow"
+              >
+                <img
+                  :src="person.Img || '/assets/images/about.svg'"
+                  :alt="person.Name"
+                  width="350"
+                  height="350"
+                />
                 <h3 x-text="person.Name || 'No name'"></h3>
               </article>
             </template>
@@ -45,7 +57,10 @@
           <div class="grid">
             <template x-for="(mate, i) in team.members" :key="mate.Name || i">
               <article @click="link_to(mate.Email)">
-                <img :src="mate.Img || '/assets/images/about.svg'" :alt="mate.Name || 'no name'" />
+                <img
+                  :src="mate.Img || '/assets/images/about.svg'"
+                  :alt="mate.Name || 'no name'"
+                />
                 <footer>
                   <p>
                     <strong x-text="mate.Name || 'No name'"></strong>
@@ -78,8 +93,10 @@
           <span x-text="contact_us.intro || 'No intro found! but'"></span>
           <span>
             You can contact us via
-            <a :href="contact_us.email || 'mailto:support@ca-gk.org'"
-              x-text="contact_us.email || 'mailto:support@ca-gk.org'"></a>
+            <a
+              :href="contact_us.email || 'mailto:support@ca-gk.org'"
+              x-text="contact_us.email || 'mailto:support@ca-gk.org'"
+            ></a>
           </span>
         </p>
       </hgroup>
@@ -92,12 +109,21 @@
       <link rel="stylesheet" href="/assets/css/about/person.css" />
       <div>
         <div class="conatiner">
-          <img :src="links.img" alt="about_data.Person.Name || 'No name'" width="250" height="250" />
+          <img
+            :src="links.img"
+            alt="about_data.Person.Name || 'No name'"
+            width="250"
+            height="250"
+          />
           <h1 x-text="about_data.Person.Name || 'No name'"></h1>
         </div>
         <div class="grid">
-          <a :href="links.linkedin">{{template "linkedin" .}} <span>Linkedin</span></a>
-          <a :href="links.whatsapp">{{template "whatsapp" .}} <span>Whatsapp</span></a>
+          <a :href="links.linkedin"
+            >{{template "linkedin" .}} <span>Linkedin</span></a
+          >
+          <a :href="links.whatsapp"
+            >{{template "whatsapp" .}} <span>Whatsapp</span></a
+          >
           <a :href="links.email">{{template "mail" .}} <span>Email</span></a>
         </div>
       </div>
@@ -116,7 +142,9 @@
           <blockquote>
             <p x-text="feedback.quote.said || 'No quote found!'"></p>
             <footer>
-              <cite>-<span x-text="feedback.quote.name || 'No name found!'"></span></cite>
+              <cite
+                >-<span x-text="feedback.quote.name || 'No name found!'"></span
+              ></cite>
             </footer>
           </blockquote>
         </hgroup>

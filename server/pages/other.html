@@ -10,46 +10,25 @@
       const annotation_data = JSON.parse("{{ .Data }}");
     </script>
     <!-- Annotations section -->
-    <template x-if="!annotation_data.Thanks" x-cloak>
-      <div>
-        <link rel="stylesheet" href="/assets/css/annotation.css" />
-        <h1>Annotation</h1>
-        <div x-data="annotation_data">
-          <table class="striped">
-            <thead>
-              <tr>
-                <th>Message</th>
-              </tr>
-            </thead>
-            <tbody>
-              <template x-for="(data, i) in Msg" :key="i">
-                <tr>
-                  <td>
-                    <details name="example">
-                      <summary x-text="data.Short"></summary>
-                      <p x-text="data.Long"></p>
-                    </details>
-                  </td>
-                </tr>
-              </template>
-            </tbody>
-          </table>
-        </div>
+    <div>
+      <link rel="stylesheet" href="/assets/css/annotation.css" />
+      <h1>Annotation</h1>
+      <div x-data="annotation_data">
+        <article>
+          <span>Messages</span>
+          <template x-for="(msg, i) in Msg" :key="i">
+            <article class="shadow">
+              <details name="example" open>
+                <summary x-text="msg.Short"></summary>
+                <footer>
+                  <p x-text="msg.Long"></p>
+                </footer>
+              </details>
+            </article>
+          </template>
+        </article>
       </div>
-    </template>
-
-    <!-- Thanks section -->
-    <template x-if="annotation_data.Thanks" x-cloak>
-      <div>
-        <style></style>
-        <h1>Thank you!</h1>
-        <p>
-          We will respond to you shortly. We have also sent an email regarding
-          what we received. Thank you for your time and for choosing our firm.
-        </p>
-        <a href="/#"><span>Go back home</span> &#8594;</a>
-      </div>
-    </template>
+    </div>
   </section>
 </main>
 

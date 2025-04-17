@@ -53,7 +53,6 @@ func (prompt Prompt) TalkToAI() string {
 	if err = json.Unmarshal(body, &result); err != nil {
 		// trying to parse the data (to see if it's an error from ai or not)
 		slog.Error(err.Error())
-		slog.Info("trying again...")
 		var errMsg map[string]interface{}
 		if err = json.Unmarshal(body, &errMsg); err != nil {
 			slog.Error(err.Error())
@@ -68,15 +67,52 @@ func (prompt Prompt) TalkToAI() string {
 
 func CreatePrompt(msg []Msg) Prompt {
 	// will create & return a prompt type object
+	var patner_msg []Msg
+	patner_msg = append(patner_msg, Msg{
+		Role:    "system",
+		Content: fmt.Sprint("Your Partners are mentioned below"),
+	})
+	for _, v := range config_data.About.Patners.Members {
+		patner_msg = append(patner_msg, Msg{
+			Role: "system",
+			Content: fmt.Sprintf("Partner Name: %s\nDetails: %s\nStartup Story: %s\nBackground: %s\nFor more information, please visit the About page. which is accessible through the navigation bar.",
+				v.Name, v.Details, v.Startup_story, v.Background),
+		})
+	}
+	var services_msg []Msg
+	services_msg = append(services_msg, Msg{
+		Role:    "system",
+		Content: fmt.Sprint("The Services provided by the firm are mentioned below, they can get started with a service by sending an message from contactus section, which can be accessed from navigation bar, there are no fix prices or price plans for these services, they are decided by the firm."),
+	})
+	for _, v := range config_data.Services.Options {
+		services_msg = append(services_msg, Msg{
+			Role:    "system",
+			Content: fmt.Sprintf("Service Details: %s\nFor more information, please visit the Services page. You can find the link in the Services section, which is accessible through the navigation bar.", v),
+		})
+	}
 	return Prompt{
 		Model: "smollm2",
-		Messages: append([]Msg{
-			{
-				Role:    "system",
-				Content: "You are an AI chatbot designed to play a vital role in chartered accounting by providing accurate and reliable support for various accounting inquiries. Your primary objective is to empower individuals with essential information regarding accounting principles, practices, and services relevant to chartered accountants, ensuring they have the necessary resources to address their financial questions effectively. Users are encouraged to ask pertinent questions related to chartered accounting. Consulting a qualified professional from the firm is always the best approach for specialized matters or uncertainties. Remember, the user directs the questions, so your responses must and should be formatted in Plain text and can not use markdown.",
-			},
-		}, msg...),
+		Messages: append(
+			append(
+				append(
+					[]Msg{
+						{
+							Role:    "system",
+							Content: "You are an AI chatbot, AuditIQ, designed to play a vital role in chartered accounting by providing accurate and reliable support for various accounting inquiries. Your primary objective is to empower individuals with essential information regarding accounting principles, practices, and services relevant to chartered accountants, ensuring they have the necessary resources to address their financial questions effectively. Users are encouraged to ask pertinent questions related to chartered accounting. Consulting a qualified professional from the firm is always the best approach for specialized matters or uncertainties. Remember, the user directs the questions, so your responses must and should be formatted in plain text, and you can not use markdown. Give short but accurate responses, if incase you don't have an answer, tell them to contact the firm for more details, prices are decided by the firm and should contact them.",
+						},
+					}, patner_msg...,
+				), services_msg...,
+			), msg...),
 		Stream: false,
+		Options: Option{
+			Temperature:    0.7,
+			Repeat_penalty: 0.9,
+			Num_ctx:        2050,
+			Seed:           42,
+			Num_predict:    75,
+			Top_k:          40,
+			Top_p:          0.85,
+		},
 	}
 }
 
@@ -93,7 +129,7 @@ func (email Email) render(to bool) string {
 
 	// will send response to user
 	if to {
-		return fmt.Sprint("Thank you for choosing Gopi & Kashyap CA firm, we will get back to you shortly!\n\nHere's what we have recived:\n\n", data)
+		return fmt.Sprint(config_data.Contacts.Responce, "\n\nHere's what we have recived:\n\n", data)
 	}
 
 	// will send response to us

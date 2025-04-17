@@ -440,7 +440,6 @@ func annotation(w http.ResponseWriter, r *http.Request) {
 	var err error
 	var annotaData, commonData []byte
 	if annotaData, err = json.Marshal(otherType{
-		Thanks: false,
 		Msg:    msg,
 	}); err != nil {
 		slog.Error(err.Error())
@@ -462,15 +461,16 @@ func thanks(w http.ResponseWriter, r *http.Request) {
 	common.Top = updateAnnotation()
 	var err error
 	var thanksData, commonData []byte
-	if thanksData, err = json.Marshal(otherType{
-		Thanks: true,
+	if thanksData, err = json.Marshal(errorType{
+		ErrorTitle: "Thank you!",
+		ErrorMsg: "Thanks for choosing us! We’ve emailed you a confirmation and will get back to you shortly.",
 	}); err != nil {
 		slog.Error(err.Error())
 	}
 	if commonData, err = json.Marshal(common); err != nil {
 		slog.Error(err.Error())
 	}
-	if err := otherTmpl.Execute(w, sendType{
+	if err := errorTmpl.Execute(w, sendType{
 		Data:   string(thanksData),
 		Common: string(commonData),
 	}); err != nil {

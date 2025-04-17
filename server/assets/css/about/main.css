@@ -89,7 +89,7 @@ hgroup {
 
   & article {
     display: flex;
-    border-radius: 15%;
+    border-radius: 5%;
     flex-direction: column;
     justify-content: center;
     align-items: center;

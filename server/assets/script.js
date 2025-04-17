@@ -52,8 +52,11 @@ const data = {
         // replasing the content with that data
         if (data !== undefined || data !== null) {
           this.chat[this.chat.length - 1].content = data.msg;
+        } else {
+          this.chat[this.chat.length - 1].content =
+            "Something went wrong! please try again later.";
         }
-      }, 700);
+      }, 500);
     } catch (err) {
       console.error(err);
     }

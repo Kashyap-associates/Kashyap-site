@@ -1,0 +1,11 @@
+---
+- hosts: vps
+  tasks:
+    - name: Pull the latest changes and run the makefile
+      shell: |
+          if [ -d $HOME/Kashyap-site ]; then
+            git clone https://github.com/Kashyap-associates/Kashyap-site.git $HOME/Kashyap-site
+          fi
+          cd $HOME/Kashyap-site && git pull origin master && make stop && make 
+      args:
+        executable: /bin/bash

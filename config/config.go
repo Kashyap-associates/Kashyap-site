@@ -21,12 +21,24 @@ type Msg struct {
 	Content string `json:"content"`
 }
 
+// gpt options
+type Option struct {
+	Temperature    float64 `json:"temperature"`
+	Seed           int64   `json:"seed"`
+	Repeat_penalty float64 `json:"repeat_penalty"`
+	Num_ctx        int64   `json:"num_ctx"`
+	Num_predict    int64   `json:"num_predict"`
+	Top_k          int64   `json:"top_k"`
+	Top_p          float64 `json:"top_p"`
+}
+
 // gpt prompts
 type Prompt struct {
 	Model    string `json:"model"`
 	Messages []Msg  `json:"messages"`
 	Stream   bool   `json:"stream"`
 	Raw      bool   `json:"raw"`
+	Options  Option `json:"options"`
 }
 
 // gpt result
