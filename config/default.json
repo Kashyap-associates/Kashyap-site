@@ -1,0 +1,275 @@
+{
+  "name": "Gopi & Kashyap",
+  "calculator": "https://incometaxindia.gov.in/pages/tools/tax-calculator.aspx",
+  "links": {
+    "linkedin": "https://ca-gk.org",
+    "telegram": "http://t.me/gopi_kashyap_ca_bot",
+    "email": "mailto:support@ca-gk.org"
+  },
+  "hero": {
+    "title": "Tallying Truth, Building Trust",
+    "sub_title": "Expert-led accounting solutions"
+  },
+  "about": {
+    "image": "",
+    "intro": "We prioritize accuracy and honesty in providing personalized support for your needs. Specializing in smart accounting, tax, and financial advice, we assist individuals, entrepreneurs, and emerging businesses. With our extensive experience, we help you make informed financial decisions.",
+    "story": "What started as a solo practice with a passion for helping small businesses navigate their finances has grown into a trusted firm serving clients across industries. Built on integrity, clarity, and personal attention, we’re here to make accounting simpler and smarter for everyone.",
+    "choose_us": "We combine expert knowledge with a personal approach, offering accounting solutions that are both accurate and easy to understand. Whether you're managing a business or planning your personal finances, we tailor our services to fit your goals. With us, you gain a trusted partner committed to your financial success.",
+    "patners": {
+      "intro": "Behind every great result is a strong partnership. We collaborate with trusted professionals and firms who share our values of integrity, precision, and client-first service — ensuring you receive comprehensive support across all areas of finance and compliance.",
+      "members": [
+        {
+          "image": "",
+          "name": "Kashyap",
+          "details": "A seasoned Chartered Accountant with a sharp eye for detail and a strategic mindset, Kashyap brings over a decade of experience in taxation, compliance, and business advisory. Known for his analytical approach and commitment to client success, he specializes in helping businesses scale with confidence and clarity.",
+          "background": "Kashyap is a Chartered Accountant with a focus on taxation, business advisory, and compliance. His expertise spans across helping both small and growing businesses navigate the complexities of financial regulations. Kashyap’s passion lies in simplifying intricate financial strategies and ensuring his clients have a clear path toward growth and financial stability.",
+          "startup_story": "Our story began with a simple idea: to provide accounting services that empower confident financial decisions. Founded by a Chartered Accountant, we started as a one-person operation focused on personalized guidance and transparent communication. ",
+          "links": {
+            "email": "mailto:support@ca-gk.org",
+            "linkedin": "https://ca-gk.org",
+            "whatsapp": "https://ca-gk.org"
+          },
+          "feedback": {
+            "intro": "Our clients’ success stories speak volumes about the dedication and expertise Kashyap and Gopi bring to every project. With their unique blend of professionalism, strategic insight, and personalized service, they have earned the trust of clients across industries. Here’s what some of them have to say",
+            "quote": {
+              "name": "Ravi Kumar, Entrepreneur",
+              "said": "Kashyap's advice has been invaluable for my business. His ability to break down complex financial concepts into simple, actionable steps has helped me make better decisions. I feel confident knowing my finances are in good hands."
+            }
+          }
+        },
+        {
+          "image": "",
+          "name": "Gopi",
+          "details": "Gopi combines deep accounting expertise with a passion for simplifying complex financial matters. With strong roots in audit, financial planning, and reporting, he focuses on building long-term client relationships through trust, transparency, and results-driven service.",
+          "background": "Gopi is a skilled Chartered Accountant specializing in audit, financial planning, and business consulting. With a strong foundation in financial analysis, he works closely with clients to identify opportunities for efficiency and long-term growth. Gopi takes pride in offering personalized solutions that are aligned with each client’s unique goals and financial landscape..",
+          "startup_story": "Over time, our commitment to quality and integrity has allowed us to grow and serve diverse clients, from startups to established companies. While our team and tools have evolved, our core values of precision, clarity, and trust remain unchanged.",
+          "links": {
+            "email": "mailto:support@ca-gk.org",
+            "linkedin": "https://ca-gk.org",
+            "whatsapp": "https://ca-gk.org"
+          },
+          "feedback": {
+            "intro": "Our clients’ success stories speak volumes about the dedication and expertise Kashyap and Gopi bring to every project. With their unique blend of professionalism, strategic insight, and personalized service, they have earned the trust of clients across industries. Here’s what some of them have to say",
+            "quote": {
+              "name": "Neha Sharma, Business Owner",
+              "said": "Gopi is extremely professional and approachable. He took the time to understand my needs and delivered tailored solutions that perfectly fit my business. His insights into financial planning have been a game-changer for me."
+            }
+          }
+        }
+      ]
+    },
+    "team": {
+      "intro": "Our team is a blend of dedicated professionals with a shared commitment to delivering high-quality financial solutions. With years of experience and a passion for helping clients thrive, each member brings a unique set of skills to the table. We work together to ensure that every client receives personalized, expert service tailored to their specific needs.",
+      "members": [
+        {
+          "image": "",
+          "name": "Aarav Patel",
+          "position": "employee",
+          "link": "mailto:support@ca-gk.org"
+        },
+        {
+          "image": "",
+          "name": "Priya Desai",
+          "position": "employee",
+          "link": "mailto:support@ca-gk.org"
+        },
+        {
+          "image": "",
+          "name": "Rahul Mehta",
+          "position": "employee",
+          "link": "mailto:support@ca-gk.org"
+        }
+      ]
+    }
+  },
+  "services": {
+    "intro": "At Gopi & Kashyap firm, we offer a comprehensive range of services designed to help you navigate the complexities of the financial world with ease. Whether you’re an individual looking to optimize your personal finances or a business seeking expert guidance on growth and compliance, our team of experienced Chartered Accountants is here to assist you every step of the way. With a focus on personalized solutions and long-term success, we provide services that meet the unique needs of each client, ensuring peace of mind and financial stability.",
+    "short_intro": "At Gopi & Kashyap firm, we provide expert financial services tailored to your needs. From tax planning to business consulting, our Chartered Accountants are committed to helping you achieve financial success with personalized, reliable solutions.",
+    "options": [
+      "Tax Planning and Advisory",
+      "Accounting and Bookkeeping",
+      "Audit and Assurance",
+      "Business Consulting",
+      "Financial Advisory and Investment Planning",
+      "Corporate Finance",
+      "Company Registration and Compliance",
+      "International Taxation",
+      "Estate and Succession Planning",
+      "Government Grants and Subsidies"
+    ],
+    "data": [
+      {
+        "image": "",
+        "name": "Tax Planning and Advisory",
+        "time": "7:00",
+        "deliverable": [
+          "online"
+        ],
+        "regulation": "ca",
+        "category": "tax",
+        "availability": "24/7",
+        "audience": "any",
+        "details": "Our tax planning services aim to optimize your tax liabilities, offering strategies that align with your long-term financial goals. We specialize in personalized tax planning for individuals and businesses to ensure compliance while minimizing tax impact.",
+        "scope": "We provide comprehensive advice on income tax, GST, and tax-efficient investment strategies. Our focus is on providing you with the right guidance to navigate complex tax systems and ensure maximum savings."
+      },
+      {
+        "image": "",
+        "name": "Accounting and Bookkeeping",
+        "time": "7:00",
+        "deliverable": [
+          "online"
+        ],
+        "regulation": "ca",
+        "category": "accounting",
+        "availability": "24/7",
+        "audience": "any",
+        "details": "We offer full-spectrum accounting and bookkeeping services, ensuring that your financial records are accurate, organized, and compliant with all regulations. Our team will manage your books so you can focus on growing your business.",
+        "scope": "From financial statement preparation to payroll management and bank reconciliations, we ensure your accounting processes are streamlined and error-free, giving you peace of mind."
+      },
+      {
+        "image": "",
+        "name": "Audit and Assurance",
+        "time": "7:00",
+        "deliverable": [
+          "online"
+        ],
+        "regulation": "ca",
+        "category": "audit",
+        "availability": "24/7",
+        "audience": "businesses, corporations",
+        "details": "Our audit and assurance services provide a detailed, unbiased examination of your financial records, giving you the confidence that your business is complying with all necessary regulations. We offer both internal and statutory audits.",
+        "scope": "We specialize in internal audits, statutory audits, and risk management reviews, ensuring that your financial practices are transparent, compliant, and efficient."
+      },
+      {
+        "image": "",
+        "name": "Business Consulting",
+        "time": "7:00",
+        "deliverable": [
+          "online"
+        ],
+        "regulation": "ca",
+        "category": "business",
+        "availability": "24/7",
+        "audience": "businesses, startups",
+        "details": "Our business consulting services provide you with strategic insights that help you grow and manage your business more effectively. Whether you're a startup or an established firm, we tailor our approach to your specific challenges.",
+        "scope": "We offer business valuations, budgeting, financial forecasting, and cash flow management to optimize your resources and improve profitability."
+      },
+      {
+        "image": "",
+        "name": "Financial Advisory and Investment Planning",
+        "time": "7:00",
+        "deliverable": [
+          "online"
+        ],
+        "regulation": "ca",
+        "category": "finance",
+        "availability": "24/7",
+        "audience": "individuals, businesses",
+        "details": "Our financial advisory services help you make sound investment decisions that align with your long-term financial goals. Whether you're looking to grow your wealth or plan for retirement, we provide expert advice tailored to your needs.",
+        "scope": "From retirement planning to asset allocation and risk management, we ensure that your financial decisions are well-informed and well-executed."
+      },
+      {
+        "image": "",
+        "name": "Corporate Finance",
+        "time": "7:00",
+        "deliverable": [
+          "online"
+        ],
+        "regulation": "ca",
+        "category": "corporate",
+        "availability": "24/7",
+        "audience": "corporations, businesses",
+        "details": "We provide corporate finance services to support your growth and long-term strategic objectives. From mergers and acquisitions to capital raising, we guide you through complex financial transactions with expertise and precision.",
+        "scope": "Our services include due diligence, capital raising, debt restructuring, and financial modeling to ensure the successful execution of your corporate finance strategies."
+      },
+      {
+        "image": "",
+        "name": "Company Registration and Compliance",
+        "time": "7:00",
+        "deliverable": [
+          "online"
+        ],
+        "regulation": "ca",
+        "category": "legal",
+        "availability": "24/7",
+        "audience": "businesses, startups",
+        "details": "We assist with the registration of companies, ensuring that all legal and regulatory requirements are met from day one. We also provide ongoing compliance services to help you stay compliant with evolving business laws.",
+        "scope": "Our services include company formation, annual return filing, legal documentation, and corporate governance support."
+      },
+      {
+        "image": "",
+        "name": "International Taxation",
+        "time": "7:00",
+        "deliverable": [
+          "online"
+        ],
+        "regulation": "ca",
+        "category": "tax",
+        "availability": "24/7",
+        "audience": "businesses, expats",
+        "details": "Our international taxation services provide strategic planning and compliance solutions for cross-border transactions. We assist with transfer pricing, double taxation relief, and expatriate tax services to help you navigate the complexities of international tax laws.",
+        "scope": "We specialize in transfer pricing documentation, tax treaty advisory, and international tax planning for businesses operating in multiple jurisdictions."
+      },
+      {
+        "image": "",
+        "name": "Estate and Succession Planning",
+        "time": "7:00",
+        "deliverable": [
+          "online"
+        ],
+        "regulation": "ca",
+        "category": "estate",
+        "availability": "24/7",
+        "audience": "individuals, families",
+        "details": "Our estate and succession planning services ensure that your wealth is protected and passed on according to your wishes. We provide guidance on will preparation, trust management, and minimizing estate taxes.",
+        "scope": "We help you plan for the future by developing strategies for estate tax reduction, asset protection, and ensuring that your family’s financial future is secure."
+      },
+      {
+        "image": "",
+        "name": "Government Grants and Subsidies",
+        "time": "7:00",
+        "deliverable": [
+          "online"
+        ],
+        "regulation": "ca",
+        "category": "government",
+        "availability": "24/7",
+        "audience": "businesses, nonprofits",
+        "details": "We guide businesses and organizations through the process of applying for government grants and subsidies. Our expertise ensures you maximize the opportunities available to your business while meeting all necessary compliance standards.",
+        "scope": "We provide application assistance for government funding, subsidy program advisory, and ensure you meet all compliance and reporting requirements."
+      }
+    ]
+  },
+  "others": {
+    "details": "At Gopi & Kashyap firm, we offer a variety of additional tools and services to support your financial needs. From handy calculators to detailed annotations, our solutions are designed to simplify complex tasks and enhance your experience with our services.",
+    "tasks": [
+      {
+        "name": "calculator",
+        "title": "Calculator",
+        "details": "Our advanced financial calculators help you quickly estimate taxes, savings, and other financial metrics, giving you a clearer understanding of your financial position."
+      },
+      {
+        "name": "annotations",
+        "title": "Annotations",
+        "details": "Our annotation tools allow you to add custom notes and comments to your financial documents, making it easier to track important information and collaborate with your team."
+      }
+    ]
+  },
+  "contacts": {
+    "intro": "We’re here to assist you with all your financial needs. Whether you have questions about our services or need personalized advice, feel free to reach out to us. Our team is ready to provide you with expert guidance and support. Let’s connect and work together toward your financial success.",
+    "addr": "Hyderabad, Telangana",
+    "phone": "+91 1234567890",
+    "email": "support@ca-gk.org",
+    "responce": "Thank you for your response, we will get back to you shortly"
+  },
+  "annotations": [
+    {
+      "short": "Add custom notes and comments to your financial documents for easy tracking and collaboration.",
+      "long": "Our annotation tool allows you to seamlessly add notes and comments to your financial documents. This feature helps you highlight important details, track changes, and keep relevant information accessible for yourself or your team. Whether you're reviewing reports, preparing tax documents, or collaborating on financial plans, annotations make it easier to organize and reference key data. Stay organized and ensure nothing is overlooked with this practical tool."
+    },
+    {
+      "short": "Enhance your financial documents by adding personalized notes, making it easier to reference key points and collaborate effectively.",
+      "long": "Our annotation feature enables you to add personalized comments, notes, and highlights to your financial documents, ensuring that important details are never missed. Whether you’re marking up tax forms, financial statements, or business reports, this tool helps streamline your workflow. By keeping everything in one place, you can collaborate with your team more efficiently, making sure every detail is tracked and discussed thoroughly. Annotations improve clarity and organization in your financial documentation."
+    }
+  ]
+}

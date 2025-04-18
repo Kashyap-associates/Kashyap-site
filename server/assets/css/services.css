@@ -1,0 +1,135 @@
+h1 {
+  padding-bottom: 2.5rem;
+  padding-top: 2rem;
+}
+
+main,
+section {
+  transition: ease-in-out 300ms;
+
+  & p {
+    padding: 1.2rem;
+    text-align: justify;
+  }
+}
+
+div.grid {
+  grid-template-columns: auto auto;
+  place-items: center;
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: auto;
+  }
+}
+
+article {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+  width: 80%;
+  transform: scale(1);
+  transition: ease-in-out 500ms;
+  transition-delay: 100ms;
+  border-radius: 10px;
+  padding: 1.7rem;
+
+  @media (hover: hover) {
+    &:hover {
+      border-radius: 1px;
+      transform: scale(1.05);
+
+      & span {
+        border-bottom: 2px solid #e94f37;
+      }
+
+      & footer {
+        & span {
+          border-bottom: 2px solid white;
+        }
+
+        & a {
+          padding: 10px 1rem;
+          color: white;
+          border-radius: 5px;
+          background-color: #0058fb;
+
+          & span {
+            color: white;
+            text-decoration: none;
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+
+  & span {
+    text-align: left;
+    font-weight: bold;
+    font-size: 2rem;
+    transition: ease-in-out 300ms;
+    border-bottom: 2px solid white;
+  }
+
+  & footer {
+    padding: 1.2rem;
+    text-align: justify;
+    line-height: 1.8rem;
+    transition: ease-in-out 300ms;
+
+    & span {
+      font-weight: normal;
+      font-size: 1rem;
+      border-bottom: 2px solid white;
+    }
+
+    & .work {
+      padding-right: 10px;
+    }
+
+    & a {
+      top: 0;
+      left: 7%;
+      position: relative;
+      text-decoration: none;
+      text-align: center;
+      color: #0058fb;
+      transition: ease-in-out 300ms;
+      transition-delay: 100ms;
+
+      & span {
+        color: #0058fb;
+        text-decoration: underline;
+        border-bottom: none;
+      }
+    }
+
+    & p {
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+    }
+
+    & ul li {
+      padding-top: 0.7rem;
+      transition: ease-in-out 300ms;
+
+      & span {
+        padding-left: 7px;
+      }
+
+      & ul li {
+        padding-top: 5px;
+        list-style-type: circle;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      & {
+        padding: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<!-- Other pages -->
+{{define "content"}}
+
+<!-- Navbar -->
+{{template "navbar" .}}
+
+<main>
+  <section class="container">
+    <script nonce="xyz">
+      const annotation_data = JSON.parse("{{ .Data }}");
+    </script>
+    <!-- Annotations section -->
+    <div>
+      <link rel="stylesheet" href="/assets/css/annotation.css" />
+      <h1>Annotation</h1>
+      <div x-data="annotation_data">
+        <article>
+          <span>Messages</span>
+          <template x-for="(msg, i) in Msg" :key="i">
+            <article class="shadow">
+              <details name="example" open>
+                <summary x-text="msg.Short"></summary>
+                <footer>
+                  <p x-text="msg.Long"></p>
+                </footer>
+              </details>
+            </article>
+          </template>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+{{template "footer" .}}
+
+<!-- End of other -->
+{{end}}

@@ -1,0 +1,216 @@
+<!-- About Page -->
+{{define "content"}}
+<!-- Navbar -->
+{{template "navbar" .}}
+<main>
+  <style>
+    :root {
+      text-align: justify;
+    }
+  </style>
+  <script nonce="xyz">
+    const about_data = JSON.parse("{{ .Data }}");
+  </script>
+  {{template "about_script" .}}
+  <!-- default about page -->
+  <template x-if="!about_data.IsPerson" x-cloak>
+    <section class="container" x-data="about_page">
+      <link rel="stylesheet" href="/assets/css/about/main.css" />
+      <h1>About Us</h1>
+      <hgroup>
+        <h2>Introduction</h2>
+        <p x-text="intro"></p>
+      </hgroup>
+      <hgroup>
+        <h2>Our story</h2>
+        <p x-text="story"></p>
+        <div>
+          <h3>Founding Partners</h3>
+          <p x-text="partners.intro"></p>
+          <div class="grid patners">
+            <template
+              x-for="(person, i) in partners.members"
+              :key="person.Name || i"
+              x-cloak
+            >
+              <article
+                @click="link_to('/about/' + person.Name.toLowerCase())"
+                class="shadow"
+              >
+                <img
+                  :src="person.Img || '/assets/images/about.svg'"
+                  :alt="person.Name"
+                  width="350"
+                  height="350"
+                />
+                <h3 x-text="person.Name || 'No name'"></h3>
+              </article>
+            </template>
+          </div>
+        </div>
+      </hgroup>
+      <hgroup>
+        <h2>Our team</h2>
+        <p x-text="team.intro"></p>
+        <div>
+          <h3>Team members</h3>
+          <div class="grid">
+            <template x-for="(mate, i) in team.members" :key="mate.Name || i">
+              <article @click="link_to(mate.Email)">
+                <img
+                  :src="mate.Img || '/assets/images/about.svg'"
+                  :alt="mate.Name || 'no name'"
+                />
+                <footer>
+                  <p>
+                    <strong x-text="mate.Name || 'No name'"></strong>
+                    <br />
+                    <span x-text="mate.Position || 'No position'"></span>
+                  </p>
+                  <a>Get in touch</a>
+                </footer>
+              </article>
+            </template>
+          </div>
+        </div>
+      </hgroup>
+      <hgroup>
+        <h2>Services we offer</h2>
+        <p x-text="services.intro"></p>
+        <ul>
+          <template x-for="(service, i) in services.options" :key="i">
+            <li x-text="service || 'No service found!'"></li>
+          </template>
+        </ul>
+      </hgroup>
+      <hgroup>
+        <h2>Why choose us?</h2>
+        <p x-text="choose_us"></p>
+      </hgroup>
+      <hgroup>
+        <h2>Contact Us</h2>
+        <p>
+          <span x-text="contact_us.intro || 'No intro found! but'"></span>
+          <span>
+            You can contact us via
+            <a
+              :href="contact_us.email || 'mailto:support@ca-gk.org'"
+              x-text="contact_us.email || 'mailto:support@ca-gk.org'"
+            ></a>
+          </span>
+        </p>
+      </hgroup>
+    </section>
+  </template>
+
+  <!-- Patners about page -->
+  <template x-if="about_data.IsPerson" x-cloak>
+    <section class="container" x-data="person_data">
+      <link rel="stylesheet" href="/assets/css/about/person.css" />
+      <div>
+        <div class="conatiner">
+          <img
+            :src="links.img"
+            alt="about_data.Person.Name || 'No name'"
+            width="250"
+            height="250"
+          />
+          <h1 x-text="about_data.Person.Name || 'No name'"></h1>
+        </div>
+        <div class="grid">
+          <a :href="links.linkedin"
+            >{{template "linkedin" .}} <span>Linkedin</span></a
+          >
+          <a :href="links.whatsapp"
+            >{{template "whatsapp" .}} <span>Whatsapp</span></a
+          >
+          <a :href="links.email">{{template "mail" .}} <span>Email</span></a>
+        </div>
+      </div>
+      <div>
+        <hgroup>
+          <h2>Professional Introduction</h2>
+          <p x-text="intro || 'No intro found!'"></p>
+        </hgroup>
+        <hgroup>
+          <h2>Background & Credentials</h2>
+          <p x-text="background || 'No data found!'"></p>
+        </hgroup>
+        <hgroup>
+          <h2>Client & Partner Feedback</h2>
+          <p x-text="feedback.intro || 'No intro found!'"></p>
+          <blockquote>
+            <p x-text="feedback.quote.said || 'No quote found!'"></p>
+            <footer>
+              <cite
+                >-<span x-text="feedback.quote.name || 'No name found!'"></span
+              ></cite>
+            </footer>
+          </blockquote>
+        </hgroup>
+        <hgroup>
+          <h2>Startup & Business Involvement</h2>
+          <p x-text="startup_story || 'No story found!'"></p>
+        </hgroup>
+      </div>
+    </section>
+  </template>
+</main>
+<!-- Footer -->
+{{template "footer" .}}
+
+<!-- End of about -->
+{{end}}
+
+<!-- Script componet -->
+{{define "about_script"}}
+<template x-if="!about_data.IsPerson">
+  <script nonce="xyz">
+    const about_page = {
+      intro: about_data.Intro || "No intro found!",
+      story: about_data.Story || "No story found!",
+      partners: {
+        intro: about_data.Patners.Intro || "No intro found!",
+        members: about_data.Patners.Members,
+      },
+      team: {
+        intro: about_data.Team.Intro || "No intro found!",
+        members: about_data.Team.Members,
+      },
+      services: {
+        intro: about_data.Services.Intro,
+        options: about_data.Services.Options,
+      },
+      choose_us: about_data.Choose_us || "No data found!",
+      contact_us: {
+        intro: about_data.Contact.Intro,
+        email: about_data.Contact.Email,
+      },
+    };
+  </script>
+</template>
+<template x-if="about_data.IsPerson">
+  <script nonce="xyz">
+    const person_data = {
+      links: {
+        img: about_data.Person.Links.Img || "/assets/images/about.svg",
+        linkedin:
+          about_data.Person.Links.Linkedin || "mailto:support@ca-gk.org",
+        whatsapp:
+          about_data.Person.Links.Whatsapp || "mailto:support@ca-gk.org",
+        email: about_data.Person.Links.Email || "mailto:support@ca-gk.org",
+      },
+      intro: about_data.Person.Intro || "No intro found!",
+      background: about_data.Person.Background || "No data found!",
+      feedback: {
+        intro: about_data.Person.Feedback.Intro || "No intro found!",
+        quote: {
+          name: about_data.Person.Feedback.Quote.Name || "No name found!",
+          said: about_data.Person.Feedback.Quote.Said || "No quote found!",
+        },
+      },
+      startup_story: about_data.Person.Startup || "No story found!",
+    };
+  </script>
+</template>
+{{end}}

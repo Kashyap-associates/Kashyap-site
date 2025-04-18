@@ -1,0 +1,80 @@
+services:
+  reverse-proxy:
+    image: nginx:stable-alpine
+    container_name: reverse-proxy
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - deploy_net
+
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    volumes:
+      - uptime_kuma:/app/data
+    restart: on-failure
+    expose:
+      - "3001"
+    networks:
+      - deploy_net
+
+  app:
+    build:
+      context: ../
+      dockerfile: config/Dockerfile
+    container_name: site-app
+    working_dir: /app
+    expose:
+      - "11000"
+      - "8080"
+    env_file:
+      - ../app.env
+    restart: on-failure
+    networks:
+      - deploy_net
+    # develop:
+    #   watch:
+    #     - path: ../
+    #       action: rebuild
+    #       ignore:
+    #         - ".git"
+    #         - "*.log"
+    #         - "*.env"
+    #         - "data"
+
+  ollama:
+    restart: on-failure
+    image: ollama/ollama:latest
+    container_name: ollama-ai
+    expose:
+      - "11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - deploy_net
+    command: "serve"
+
+  redis:
+    restart: on-failure
+    image: redis:alpine
+    container_name: db-redis
+    expose:
+      - "6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - deploy_net
+
+networks:
+  deploy_net:
+    driver: bridge
+
+volumes:
+  ollama_data:
+  uptime_kuma:

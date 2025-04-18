@@ -1,0 +1,208 @@
+<!-- Landing Page -->
+{{define "content"}}
+<!-- Nav bar -->
+{{template "navbar" .}}
+<script nonce="xyz">
+  const home_page = JSON.parse("{{ .Data }}");
+</script>
+
+<main x-data="home_page">
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <span class="title"><strong x-text="Hero.Title || 'No Title found!'"></strong></span>
+      <br />
+      <span x-text="Hero.Sub_title || 'No Sub title found!'"></span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container">
+    <h1>About Us</h1>
+    <div class="container">
+      <div class="grid">
+        <div class="container">
+          <img :src="About.Image || '/assets/images/about.svg'" alt="about logo" height="500" width="500" />
+        </div>
+        <div class="container top-text">
+          <p class="secondary" x-text="About.Details"></p>
+        </div>
+      </div>
+      <a href="/about"><span>Learn More</span> &#8594;</a>
+      <div class="grid">
+        <h2>Our Partners</h2>
+      </div>
+      <div class="grid">
+        <template x-for="(person, i) in About.People" :key="person.Name || i" x-cloak>
+          <article @click="link_to('/about/' + person.Name.toLowerCase())">
+            <div>
+              <img :src="person.Image || '/assets/images/about.svg'" alt="person.Name" height="250" width="250" />
+            </div>
+            <footer>
+              <span x-text="person.Name || 'no name'"></span>
+              <p x-text="person.Details || 'no details'"></p>
+              <nav>
+                <ul class="container">
+                  <li>
+                    <a :href="person.Links.Linkedin || '/404'">
+                      {{template "linkedin" .}}
+                    </a>
+                  </li>
+                  <li>
+                    <a :href="person.Links.Whatsapp || '/404'">
+                      {{template "whatsapp" .}}
+                    </a>
+                  </li>
+                  <li>
+                    <a :href="person.Links.Email || '/404'">
+                      {{template "mail" .}}
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </footer>
+          </article>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="container">
+    <h1>Services</h1>
+    <div class="container">
+      <div class="grid">
+        <template x-for="(task, i) in Services" :key="task.Name || i" x-cloak>
+          <article @click="link_to('/services')">
+            <img :src="task.Image || '/assets/images/about.svg'" :alt="task.name" />
+            <footer>
+              <span x-text="task.Name || 'no name'"></span>
+              <p x-text="task.Details || 'no details'"></p>
+              <span class="link">Learn More &#8594;</span>
+            </footer>
+          </article>
+        </template>
+      </div>
+    </div>
+    <a href="/services"><span>More Services</span> &#8594;</a>
+  </section>
+
+  <!-- Others Section -->
+  <section id="others" class="container">
+    <h1>Others</h1>
+    <div class="contrast">
+      <div class="grid details">
+        <p x-text="Others.Details || 'no details'"></p>
+      </div>
+      <div class="grid">
+        <template x-for="(task, i) in Others.Tasks" :key="task.Name || i" x-cloak>
+          <article>
+            <div>
+              <span x-text="task.Title || 'no title'"></span>
+              <p x-text="task.Details || 'no details'"></p>
+            </div>
+            <footer>
+              <a :href="'/' + (task.Name || '404')" x-text="'View ' + task.Name"></a>
+            </footer>
+          </article>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container">
+    <h1>Contact Us</h1>
+    <div class="grid touch">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-map-pin">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+          <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+        </svg>
+        <span>Address:</span>
+        <span x-text="Contacts.Addr" x-cloak></span>
+      </div>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-phone">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+        </svg>
+        <span>Phone:</span>
+        <span x-text="Contacts.Phone" x-cloak></span>
+      </div>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+          <path d="M3 7l9 6l9 -6" />
+        </svg>
+        <span>Email:</span>
+        <span x-text="Contacts.Email" x-cloak></span>
+      </div>
+    </div>
+    <div class="container">
+      <form action="/email" method="POST" x-data="{spinner: false}" @submit="spinner = true">
+        <h2>Get in touch with us</h2>
+        <div class="grid">
+          <div class="container">
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" id="email" placeholder="eg. user@email.com" autocomplete="email"
+                title="Please enter valid email" required />
+            </label>
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" id="name" placeholder="eg. john doe" autocomplete="name"
+                title="Please enter your name" required />
+            </label>
+            <label>
+              <span>Subject</span>
+              <input type="text" name="subject" id="subject" placeholder="eg. tax"
+                title="Please enter subject for the message" required />
+            </label>
+            <label>
+              <span>Phone No.</span>
+              <input type="tel" name="phone_no" id="phone_no" placeholder="eg. (+91) 1234567890" autocomplete="tel"
+                title="Please enter your phone no" required />
+            </label>
+          </div>
+          <div class="grid">
+            <label>
+              <span>Message</span>
+              <textarea name="message" id="message" placeholder="Please write your message..."
+                title="Please enter your message" aria-label="Professional short bio" required></textarea>
+            </label>
+          </div>
+        </div>
+        <button type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-send-2">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M4.698 4.034l16.302 7.966l-16.302 7.966a.503 .503 0 0 1 -.546 -.124a.555 .555 0 0 1 -.12 -.568l2.468 -7.274l-2.468 -7.274a.555 .555 0 0 1 .12 -.568a.503 .503 0 0 1 .546 -.124z" />
+            <path d="M6.5 12h14.5" />
+          </svg><span>Send</span>
+        </button>
+        <dialog :open="spinner" style="background-color: rgba(0, 0, 0, 0.5); color: white">
+          <img src="/assets/images/sending.gif" alt="sending..." width="300" height="300" loading="lazy" />
+          <span><br />
+            Please be patient while we send your response.</span>
+        </dialog>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+{{template "footer" .}}
+<!-- End of Landing page -->
+{{end}}

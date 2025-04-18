@@ -1,0 +1,67 @@
+<!-- Services Page -->
+{{define "content"}}
+<!-- Navbar -->
+{{template "navbar" .}}
+
+<main>
+  <link rel="stylesheet" href="/assets/css/services.css" />
+  <script nonce="xyz">
+    const services_data = JSON.parse("{{ .Data }}");
+  </script>
+  <section x-data="services_data" class="container">
+    <h1>Services</h1>
+    <p x-text="services_data.Intro || 'No Intro found!'"></p>
+    <div class="grid">
+      <template x-for="(service, i) in services_data.Data" :key="i" x-cloak>
+        <article>
+          <img :src="service.Image || '/assets/images/about.svg'" :alt="service.Name || 'No name'" width="300"
+            height="300" />
+          <span x-text="service.Name || 'No name'"></span>
+          <footer>
+            <p x-text="service.Details || 'No details'"></p>
+            <ul>
+              <li>
+                <strong>Catagory:</strong>
+                <span x-text="service.Catagory || 'No catagory'"></span>
+              </li>
+              <li>
+                <strong>Target Audience:</strong>
+                <span x-text="service.Audience || 'No audience'"></span>
+              </li>
+              <li class="work">
+                <strong>Scope of work:</strong>
+                <span x-text="service.Scope || 'No scope'"></span>
+              </li>
+              <li>
+                <strong>Deliverables:</strong>
+                <ul>
+                  <template x-for="task in service.Deliverable" :key="task" x-cloak>
+                    <li x-text="task || 'No task'"></li>
+                  </template>
+                </ul>
+              </li>
+              <li>
+                <strong>Turnaround Time:</strong>
+                <span x-text="service.Time || 'No time'"></span>
+              </li>
+              <li>
+                <strong>Compliance & Regulations:</strong>
+                <span x-text="service.Regulation || 'No regulation'"></span>
+              </li>
+              <li>
+                <strong>Consultation Availability:</strong>
+                <span x-text="service.Availability || 'No avalibility'"></span>
+              </li>
+            </ul>
+            <a href="/#contact"><span>Let's connect</span> &#8594;</a>
+          </footer>
+        </article>
+      </template>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+{{template "footer" .}}
+<!-- End of services -->
+{{end}}

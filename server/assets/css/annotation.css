@@ -1,0 +1,41 @@
+h1 {
+  padding-top: 1rem;
+}
+
+article {
+  margin-top: 4rem;
+  transition: ease-in-out 300ms;
+
+  & span {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  & artical.shadow,
+  span,
+  summary {
+    margin-top: 2rem;
+    text-align: center;
+    transition: ease-in-out 300ms;
+
+    & details {
+      transition: ease-in-out 300ms;
+    }
+
+    & summary {
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+
+    & p {
+      margin-top: 2.5rem;
+      text-align: justify;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  article {
+    margin-top: 2.5rem;
+  }
+}
