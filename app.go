@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	server_port, admin_port := config.New()
+	server_port, admin_port, tg_token := config.New()
 	go func(admin_port string) {
 		server_admin := http.Server{
 			Addr:    ":" + admin_port,
@@ -21,6 +21,10 @@ func main() {
 			os.Exit(1)
 		}
 	}(admin_port)
+
+	go func(token string) {
+		server.Telegram(token)
+	}(tg_token)
 
 	serv := http.Server{
 		Addr:    ":" + server_port,

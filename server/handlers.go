@@ -440,7 +440,7 @@ func annotation(w http.ResponseWriter, r *http.Request) {
 	var err error
 	var annotaData, commonData []byte
 	if annotaData, err = json.Marshal(otherType{
-		Msg:    msg,
+		Msg: msg,
 	}); err != nil {
 		slog.Error(err.Error())
 	}
@@ -463,7 +463,7 @@ func thanks(w http.ResponseWriter, r *http.Request) {
 	var thanksData, commonData []byte
 	if thanksData, err = json.Marshal(errorType{
 		ErrorTitle: "Thank you!",
-		ErrorMsg: "Thanks for choosing us! We’ve emailed you a confirmation and will get back to you shortly.",
+		ErrorMsg:   "Thanks for choosing us! We’ve emailed you a confirmation and will get back to you shortly.",
 	}); err != nil {
 		slog.Error(err.Error())
 	}
@@ -627,14 +627,18 @@ func chat(w http.ResponseWriter, r *http.Request) {
 
 // [main] POST /email
 func email(w http.ResponseWriter, r *http.Request) {
+	var err error
 	config.Headers(w)
-	config.Send_email(config.Email{
+	if err = config.Send_email(config.Email{
 		From:     r.FormValue("email"),
 		Name:     r.FormValue("name"),
 		Subject:  r.FormValue("subject"),
 		Phone_No: r.FormValue("phone_no"),
 		Message:  r.FormValue("message"),
-	})
+	}); err != nil {
+		http.Redirect(w, r, "/error", http.StatusFound)
+		return
+	}
 	http.Redirect(w, r, "/thanks", http.StatusFound)
 }
 

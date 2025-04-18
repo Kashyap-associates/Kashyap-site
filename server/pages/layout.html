@@ -1,92 +1,101 @@
 <!doctype html>
 <html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Website" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <link rel="canonical" href="ca-gk.org,www.ca-gk.org" />
+    <link rel="icon" href="/assets/images/title-logo.png" />
+    <title>Gopi & Kashyap</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="description" content="Website" />
-  <meta name="keywords" content="HTML, CSS, JavaScript" />
-  <link rel="canonical" href="ca-gk.org,www.ca-gk.org" />
-  <link rel="icon" href="/assets/images/title-logo.png" />
-  <title>Gopi & Kashyap</title>
+    <!-- DNS prefetch -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
 
-  <!-- DNS prefetch -->
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/" />
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
+    <!-- Pico css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
 
-  <!-- Pico css -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <!-- alpinejs -->
+    <script
+      nonce="xyz"
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
+    ></script>
 
-  <!-- alpinejs -->
-  <script nonce="xyz" defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    <!-- google fonts -->
+    <link ref="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- google fonts -->
-  <link ref="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      ref="preconnect"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      crossorigin="anonymous"
+    />
 
-  <link ref="preconnect"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    crossorigin="anonymous" />
+    <!-- google icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      crossorigin="anonymous"
+    />
 
-  <!-- google icons -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    crossorigin="anonymous" />
-
-  <!-- main files -->
-  <script nonce="xyz" src="/assets/script.js"></script>
-  <style>
-    :root {
-      scroll-behavior: smooth;
-      scroll-padding: 3rem;
-    }
-
-    @view-transition {
-      navigation: auto;
-    }
-
-    @keyframes move-out {
-      from {
-        transform: translateY(0%);
+    <!-- main files -->
+    <script nonce="xyz" src="/assets/script.js"></script>
+    <style>
+      :root {
+        scroll-behavior: smooth;
+        scroll-padding: 3rem;
       }
 
-      to {
-        transform: translateY(-100%);
-      }
-    }
-
-    @keyframes move-in {
-      from {
-        transform: translateY(100%);
+      @view-transition {
+        navigation: auto;
       }
 
-      to {
-        transform: translateY(0%);
+      @keyframes move-out {
+        from {
+          transform: translateY(0%);
+        }
+
+        to {
+          transform: translateY(-100%);
+        }
       }
-    }
 
-    ::view-transition-old(root) {
-      animation: ease-in-out 300ms both move-out;
-    }
+      @keyframes move-in {
+        from {
+          transform: translateY(100%);
+        }
 
-    ::view-transition-new(root) {
-      animation: ease-in-out 300ms both move-in;
-    }
+        to {
+          transform: translateY(0%);
+        }
+      }
 
-    [x-cloak] {
-      display: none !important;
-    }
-  </style>
-</head>
+      ::view-transition-old(root) {
+        animation: ease-in-out 300ms both move-out;
+      }
 
-<body x-data="data">
-  <div x-data="{ page: JSON.parse('{{ .Common }}') }">
-    {{ template "content" . }}
-  </div>
-</body>
+      ::view-transition-new(root) {
+        animation: ease-in-out 300ms both move-in;
+      }
 
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+  </head>
+
+  <body x-data="data">
+    <div x-data="{ page: JSON.parse('{{ .Common }}') }">
+      {{ template "content" . }}
+    </div>
+  </body>
 </html>
 
 <!-- Nav Component -->
@@ -107,19 +116,41 @@
 <!-- annotation -->
 <div x-show="page.Top" class="annotation show" x-ref="annotation" x-cloak>
   <div class="container">
-    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
-      class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.75"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
+    >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+      <path
+        d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+      />
       <path d="M3 7l9 6l9 -6" />
     </svg>
     <strong><span x-text="page.Top || ''"></span></strong>
   </div>
-  <div @click="$refs.annotation.classList.remove('show'); $refs.annotation.classList.add('hide')">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+  <div
+    @click="$refs.annotation.classList.remove('show'); $refs.annotation.classList.add('hide')"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+    >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M18 6l-12 12" />
       <path d="M6 6l12 12" />
@@ -141,9 +172,18 @@
     <ul>
       <li>
         <div @click="sdbr = true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
+          >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M4 6l16 0" />
             <path d="M4 12l16 0" />
@@ -156,7 +196,11 @@
 </header>
 
 <!-- Side Bar for mobile -->
-<div class="sidebar container shadow" :class="(m_nav && sdbr) ? 'click' : ''" x-cloak>
+<div
+  class="sidebar container shadow"
+  :class="(m_nav && sdbr) ? 'click' : ''"
+  x-cloak
+>
   <nav>
     <aside>
       <ul @click="sdbr = false">
@@ -166,19 +210,37 @@
   </nav>
 </div>
 
-<div id="overlay" :class="(m_nav && sdbr) ? 'show' : 'hide'" @click="sdbr = false" x-cloak></div>
+<div
+  id="overlay"
+  :class="(m_nav && sdbr) ? 'show' : 'hide'"
+  @click="sdbr = false"
+  x-cloak
+></div>
 
 <div class="float" x-data="{click:false}">
   <button
-    @click="if (!click) { $refs.chatbot.showModal(); click = true; } else { $refs.chatbot.close(); click = false; }">
-    <svg x-show="!click" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-      class="icon icon-tabler icons-tabler-outline icon-tabler-message-dots">
+    @click="if (!click) { $refs.chatbot.showModal(); click = true; } else { $refs.chatbot.close(); click = false; }"
+  >
+    <svg
+      x-show="!click"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1.5"
+      class="icon icon-tabler icons-tabler-outline icon-tabler-message-dots"
+    >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 11v.01" />
       <path d="M8 11v.01" />
       <path d="M16 11v.01" />
-      <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3z" />
+      <path
+        d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3z"
+      />
     </svg>
     <span>Chat with AI</span>
   </button>
@@ -189,7 +251,10 @@
       </header>
       <ul class="chatbox">
         <template x-for="msg in chat">
-          <li class="chat" :class="(msg.role === 'user') ? 'outgoing' : 'incoming'">
+          <li
+            class="chat"
+            :class="(msg.role === 'user') ? 'outgoing' : 'incoming'"
+          >
             <template x-if="msg.role !== 'user'">
               <span class="material-symbols-outlined">smart_toy</span>
             </template>
@@ -197,10 +262,19 @@
           </li>
         </template>
       </ul>
-      <form x-ref="chat_input" class="chat-input"
-        @submit.prevent="talk($refs.chat_msg.value); $refs.chat_msg.value = '';">
-        <textarea name="chat-msg" id="chat-msg" x-ref="chat_msg" placeholder="Type your thoughts..." required
-          @keydown.enter.prevent="$refs.chat_input.requestSubmit();"></textarea>
+      <form
+        x-ref="chat_input"
+        class="chat-input"
+        @submit.prevent="talk($refs.chat_msg.value); $refs.chat_msg.value = '';"
+      >
+        <textarea
+          name="chat-msg"
+          id="chat-msg"
+          x-ref="chat_msg"
+          placeholder="Type your thoughts..."
+          required
+          @keydown.enter.prevent="$refs.chat_input.requestSubmit();"
+        ></textarea>
         <button type="submit">
           <span id="send-btn" class="material-symbols-outlined">send</span>
         </button>
@@ -219,17 +293,34 @@
         <li>
           <a :href="page.Links.Linkedin || '/404'">
             {{template "linkedin" .}}
-            <span>Linkedin</span></a>
+            <span>Linkedin</span></a
+          >
         </li>
         <li>
           <a :href="page.Links.Telegram || '/404'">
-            {{template "whatsapp" .}}
-            <span>Telegram</span></a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+            </svg>
+            <span>Telegram</span></a
+          >
         </li>
         <li>
           <a :href="page.Links.Email || '/404'">
             {{template "mail" .}}
-            <span>Email</span></a>
+            <span>Email</span></a
+          >
         </li>
       </ul>
       <ul class="container">
@@ -260,36 +351,69 @@
 
 <!-- Linkedin image -->
 {{define "linkedin"}}
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"
+>
   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
   <path d="M8 11v5" />
   <path d="M8 8v.01" />
   <path d="M12 16v-5" />
   <path d="M16 16v-3a2 2 0 1 0 -4 0" />
-  <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
+  <path
+    d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"
+  />
 </svg>
 {{end}}
 
 <!-- Whatsapp image -->
 {{define "whatsapp"}}
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
+>
   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
   <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-  <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+  <path
+    d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+  />
 </svg>
 {{end}}
 
 <!-- Mail image -->
 {{define "mail"}}
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-  class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
+>
   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+  <path
+    d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+  />
   <path d="M3 7l9 6l9 -6" />
 </svg>
 {{end}}

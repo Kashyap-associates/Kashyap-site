@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"net/smtp"
 	"os"
+	"strings"
 )
 
 func (prompt Prompt) TalkToAI() string {
@@ -98,7 +99,7 @@ func CreatePrompt(msg []Msg) Prompt {
 					[]Msg{
 						{
 							Role:    "system",
-							Content: "You are an AI chatbot, AuditIQ, designed to play a vital role in chartered accounting by providing accurate and reliable support for various accounting inquiries. Your primary objective is to empower individuals with essential information regarding accounting principles, practices, and services relevant to chartered accountants, ensuring they have the necessary resources to address their financial questions effectively. Users are encouraged to ask pertinent questions related to chartered accounting. Consulting a qualified professional from the firm is always the best approach for specialized matters or uncertainties. Remember, the user directs the questions, so your responses must and should be formatted in plain text, and you can not use markdown. Give short but accurate responses, if incase you don't have an answer, tell them to contact the firm for more details, prices are decided by the firm and should contact them.",
+							Content: "You are an AI chatbot, AuditIQ, designed to play a vital role in chartered accounting by providing accurate and reliable support for various accounting inquiries. Your primary objective is to empower individuals with essential information regarding accounting principles, practices, and services relevant to chartered accountants, ensuring they have the necessary resources to address their financial questions effectively. Users are encouraged to ask pertinent questions related to chartered accounting. Consulting a qualified professional from the firm is always the best approach for specialized matters or uncertainties. Remember, the user directs the questions, so your responses must and should be formatted in plain text, and you can not use markdown. Give short but accurate responses, if incase you don't have an answer, tell them to contact the firm for more details, prices are decided by the firm and should contact them, your firm name is " + config_data.Name,
 						},
 					}, patner_msg...,
 				), services_msg...,
@@ -129,7 +130,8 @@ func (email Email) render(to bool) string {
 
 	// will send response to user
 	if to {
-		return fmt.Sprint(config_data.Contacts.Responce, "\n\nHere's what we have recived:\n\n", data)
+		link := strings.Split(config_data.Links.Email, ":")
+		return fmt.Sprint(config_data.Contacts.Responce, ", Please do not reply to this email, We won't be able to respond to it, But feel free to send a message to ", link[1], "\n\nHere's what we have recived:\n\n", data)
 	}
 
 	// will send response to us
@@ -137,7 +139,7 @@ func (email Email) render(to bool) string {
 }
 
 // sends a response to the specified user's email
-func (email Email) send(to bool) {
+func (email Email) send(to bool) error {
 	// requirements
 	auth_email := os.Getenv("ADMIN_EMAIL_ID")
 	password := os.Getenv("ADMIN_EMAIL_PASSWORD")
@@ -145,26 +147,40 @@ func (email Email) send(to bool) {
 	smtpPort := "587"
 
 	// default user values
-	to_email := []string{"support@ca-gk.org"}
+	link := strings.Split(config_data.Links.Email, ":")
+	to_email := []string{link[1]}
 	message := []byte(fmt.Sprint("Subject: ", "New email from ", email.Name, "\n\n", email.render(false), "\n"))
 
 	// option to change the values
 	if to {
 		to_email = []string{email.From}
-		message = []byte(fmt.Sprint("Subject: ", "Email from Gopi & Kashyap CA firm", "\n\n", email.render(true), "\n"))
+		message = []byte(fmt.Sprint("Subject: ", "Email from ", config_data.Name, " CA firm", "\n\n", email.render(true), "\n"))
 	}
 
 	// sending the response
 	auth := smtp.PlainAuth("", auth_email, password, smtpHost)
 	if err := smtp.SendMail(fmt.Sprint(smtpHost, ":", smtpPort), auth, auth_email, to_email, message); err != nil {
 		slog.Error(err.Error())
+		return err
 	}
+
+	return nil
 }
 
-func Send_email(email Email) {
+func Send_email(email Email) error {
+	var err error
+
 	// first email
-	email.send(false)
+	if err = email.send(false); err != nil {
+		slog.Error(err.Error())
+		return err
+	}
 
 	// second email
-	email.send(true)
+	if err = email.send(true); err != nil {
+		slog.Error(err.Error())
+		return err
+	}
+
+	return nil
 }

@@ -13,6 +13,7 @@ import (
 )
 
 type DataType struct {
+	Name string `json:"name"`
 	Hero struct {
 		Title     string `json:"title"`
 		Sub_title string `json:"sub_title"`

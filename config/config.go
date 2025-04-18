@@ -49,17 +49,17 @@ type response struct {
 }
 
 // config setter
-func New() (string, string) {
+func New() (string, string, string) {
 	logger := slog.New(slog.NewJSONHandler(os.Stderr, nil))
 	slog.SetDefault(logger)
-	var server_port, admin_port string = os.Getenv("SERVER_PORT"), os.Getenv("ADMIN_PORT")
+	var server_port, admin_port, tg_token string = os.Getenv("SERVER_PORT"), os.Getenv("ADMIN_PORT"), os.Getenv("TG_BOT_API_KEY")
 	if server_port != "" {
 		server_port = "11000"
 	}
 	if admin_port != "" {
 		admin_port = "8080"
 	}
-	return server_port, admin_port
+	return server_port, admin_port, tg_token
 }
 
 func Headers(w http.ResponseWriter) {

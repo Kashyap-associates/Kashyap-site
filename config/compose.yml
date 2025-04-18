@@ -7,11 +7,6 @@ services:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-    deploy:
-      resources:
-        limits:
-          cpus: "0.01"
-          memory: 300M
     networks:
       - deploy_net
 

@@ -1,10 +1,13 @@
 package server
 
 import (
+	"Kashyap-site/config"
 	"embed"
 	"html/template"
 	"log/slog"
 	"net/http"
+
+	"github.com/go-telegram-bot-api/telegram-bot-api"
 )
 
 // common server type
@@ -35,7 +38,7 @@ type commonType struct {
 
 // other page type
 type otherType struct {
-	Msg    []struct {
+	Msg []struct {
 		Short string
 		Long  string
 	}
@@ -253,4 +256,49 @@ func NewAdmin() http.Handler {
 		"POST /update": update_data,
 		"POST /logout": auth_logout,
 	}.serve()
+}
+
+func Telegram(token string) {
+	var err error
+	if token == "" {
+		slog.Error("Token not found!")
+		return
+	}
+	u := tgbotapi.NewUpdate(0)
+	u.Timeout = 60
+	var bot *tgbotapi.BotAPI
+	if bot, err = tgbotapi.NewBotAPI(token); err != nil {
+		slog.Error(err.Error())
+		return
+	}
+	var updates tgbotapi.UpdatesChannel
+	if updates, err = bot.GetUpdatesChan(u); err != nil {
+		slog.Error(err.Error())
+		return
+	}
+	slog.Info("Telegram Server started!")
+	for update := range updates {
+		if update.Message == nil {
+			continue
+		}
+		var data string
+		if update.Message.Text != "/start" {
+			arrMsg := []config.Msg{
+				{
+					Role:    "user",
+					Content: update.Message.Text,
+				},
+			}
+			prompt := config.CreatePrompt(arrMsg)
+			data = prompt.TalkToAI()
+		} else {
+			data = "Hi There, I'm AuditIQ\nHow can I help you today ?"
+		}
+		msg := tgbotapi.NewMessage(update.Message.Chat.ID, data)
+		_, err := bot.Send(msg)
+		if err != nil {
+			slog.Error(err.Error())
+			return
+		}
+	}
 }
